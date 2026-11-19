@@ -44,7 +44,11 @@ async function register(b, email, name) {
   console.log("public badge:", (await pub.locator("article").first().innerText()).includes("Ulamolar tekshirgan"));
   // reviewer edits the published item then tries to approve own edit
   await rev.goto(editUrl, { waitUntil: "networkidle" });
-  await rev.fill('textarea[name="body.meaning"]', "Allohim, Sen poksan, Senga hamd aytaman. Sening isming barakalidir, ulugʻliging oliydir va Sendan oʻzga iloh yoʻq.");
+  // Har ishga tushirishda haqiqiy oʻzgarish boʻlishi uchun ikki variant almashtiriladi.
+  const meaningA = "Allohim, Sen poksan, Senga hamd aytaman. Sening isming barakalidir, ulugʻliging oliydir va Sendan oʻzga iloh yoʻq.";
+  const meaningB = "Allohim, Seni poklab yod etaman va Senga hamd aytaman. Isming barakali, ulugʻliging oliy va Sendan boshqa iloh yoʻq.";
+  const currentMeaning = await rev.inputValue('textarea[name="body.meaning"]');
+  await rev.fill('textarea[name="body.meaning"]', currentMeaning.trim() === meaningA ? meaningB : meaningA);
   await rev.getByRole("button", { name: "Saqlash", exact: true }).click(); await rev.waitForTimeout(1500);
   console.log("reviewer save:", await rev.locator('form [role="alert"]').first().innerText());
   await rev.reload({ waitUntil: "networkidle" });

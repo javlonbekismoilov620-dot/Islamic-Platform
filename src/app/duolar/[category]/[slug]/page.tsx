@@ -27,7 +27,7 @@ export default async function DuaPage({ params }: { params: Promise<{ category: 
       {related.length > 0 && (
         <section className="mt-10">
           <h2 className="mb-3 text-lg font-semibold text-fg">Shu toifadagi boshqa duolar</h2>
-          <ul className="grid gap-2 sm:grid-cols-2">
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {related.map((r) => (
               <li key={r.slug}><Link href={duaHref(r)} className="card glass block px-4 py-3 text-sm font-medium text-fg-2 hover:text-primary">{r.title}</Link></li>
             ))}

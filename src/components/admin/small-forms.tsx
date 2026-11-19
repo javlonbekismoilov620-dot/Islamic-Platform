@@ -16,7 +16,7 @@ export function SourceForm({ src, canDelete }: { src?: Src; canDelete?: boolean 
   const [ds, da] = useActionState(deleteSourceAction, undefined);
   return (
     <div className="space-y-2">
-      <form action={a} className="grid gap-2 sm:grid-cols-2">
+      <form action={a} className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {src?.id && <input type="hidden" name="id" value={src.id} />}
         <input name="key" defaultValue={src?.key} placeholder="Kalit (masalan, nur-al-iyzoh)" required className={input} aria-label="Kalit" />
         <select name="kind" defaultValue={src?.kind ?? "book"} className={input} aria-label="Turi">{["quran", "translation", "hadith", "book", "website", "dataset", "institution"].map((k) => <option key={k} value={k}>{k}</option>)}</select>
@@ -38,7 +38,7 @@ export function CategoryForm({ cat }: { cat?: Cat }) {
   const [ds, da] = useActionState(deleteCategoryAction, undefined);
   return (
     <div className="space-y-2">
-      <form action={a} className="grid gap-2 sm:grid-cols-[8rem_1fr_1fr_6rem_5rem]">
+      <form action={a} className="grid grid-cols-1 gap-2 sm:grid-cols-[8rem_1fr_1fr_6rem_5rem]">
         {cat?.id && <input type="hidden" name="id" value={cat.id} />}
         <select name="type" defaultValue={cat?.type ?? "dua"} className={input} aria-label="Turi">{["dua", "dhikr", "hadith", "article", "glossary"].map((k) => <option key={k} value={k}>{k}</option>)}</select>
         <input name="slug" defaultValue={cat?.slug} placeholder="slug" required className={input} aria-label="Slug" />

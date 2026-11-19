@@ -26,7 +26,7 @@ export default async function KnowledgePage() {
         <Link href="/talaffuz" className="card glass flex items-center gap-3 p-5"><Languages size={22} className="text-primary" /><span className="flex-1"><span className="block font-semibold text-fg">Talaffuz qoʻllanmasi</span><span className="text-sm text-muted">Arab tovushlari va transliteratsiya</span></span><ChevronRight size={18} className="text-muted" /></Link>
       </div>
       <SectionHeader title="Mavzular" />
-      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cats.map((c) => (
           <li key={c.slug}>
             <Link href={`/bilimlar/${c.slug}`} className="card glass group flex h-full items-start gap-4 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card">
@@ -42,7 +42,7 @@ export default async function KnowledgePage() {
       </ul>
       <section className="mt-12">
         <SectionHeader title="Shariy hukm darajalari" subtitle="Saytdagi barcha hukmlar shu belgilar bilan ajratilgan — ularni aralashtirmaslik muhim" />
-        <ul className="grid gap-2 sm:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {(Object.keys(RULINGS) as Ruling[]).map((r) => (
             <li key={r} className="card glass flex items-start gap-3 p-4">
               <RulingBadge ruling={r} className="mt-0.5" />

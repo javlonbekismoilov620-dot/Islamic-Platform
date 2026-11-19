@@ -27,7 +27,7 @@ export default function IbodatPage() {
     <div>
       <PageHeader eyebrow="Ibodat" title="Ibodat" subtitle="Hanafiy mazhabi asosida namoz, tahorat va kundalik ibodatlar uchun kerakli hamma narsa bir joyda." />
       <div className="mb-10"><PrayerCard /></div>
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {CARDS.map((c) => (
           <li key={c.href}>
             <Link href={c.href} className="card glass group flex h-full items-start gap-4 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card">

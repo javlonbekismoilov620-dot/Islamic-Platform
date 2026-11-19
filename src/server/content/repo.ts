@@ -69,3 +69,12 @@ export function pickDaily<T>(items: T[], salt: number, date = new Date()): T | n
   const day = Math.floor((date.getTime() + 5 * 3600_000) / 86_400_000); // Asia/Tashkent (UTC+5)
   return items[(day * 31 + salt) % items.length];
 }
+
+export const listSources = unstable_cache(
+  async () => {
+    const { sources } = await import("@/server/db/schema");
+    return withContext(null, (tx) => tx.select().from(sources).orderBy(asc(sources.kind), asc(sources.title)));
+  },
+  ["sources"],
+  { tags: [CONTENT_TAG], revalidate: 600 },
+);

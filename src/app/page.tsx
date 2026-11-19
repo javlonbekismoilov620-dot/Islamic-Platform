@@ -28,7 +28,7 @@ export default async function Home() {
     <div className="space-y-10">
       <Greeting />
 
-      <div className="grid gap-5 lg:grid-cols-[1.25fr_1fr]">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.25fr_1fr]">
         <PrayerCard />
         <DailyChecklist />
       </div>
@@ -47,7 +47,7 @@ export default async function Home() {
         </section>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {hadith && (
           <section>
             <SectionHeader title="Kun hadisi" action={<Link href="/hadislar" className="inline-flex items-center text-sm font-medium text-primary">Barchasi <ChevronRight size={15} /></Link>} />

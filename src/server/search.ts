@@ -8,11 +8,12 @@ import { duaHref, hadithHref } from "@/components/content/cards";
 export type SearchHit = { group: string; title: string; snippet: string; href: string; score: number; arabic?: string };
 type Doc = { group: string; title: string; titleN: string; bodyN: string; bodyAr: string; snippet: string; href: string; arabic?: string };
 
-let quranIdx: { s: number; a: number; tr: string; trN: string; ar: string; arN: string }[] | null = null;
+type QRow = { s: number; a: number; tr: string; trN: string; ar: string; arN: string };
+let quranIdx: QRow[] | null = null;
 async function quranIndex() {
   if (quranIdx) return quranIdx;
   const [meta, clean] = await Promise.all([getQuranMeta(), getCleanText()]);
-  const out: NonNullable<typeof quranIdx> = [];
+  const out: QRow[] = [];
   for (const s of meta.surahs) {
     const tr = await getTranslation("sodiq", s.n);
     tr.ayahs.forEach((t, i) => {
@@ -20,8 +21,9 @@ async function quranIndex() {
       out.push({ s: s.n, a: i + 1, tr: lat, trN: ` ${normUz(lat)} `, ar: "", arN: "" });
     });
   }
+  const byKey = new Map(out.map((r) => [`${r.s}:${r.a}`, r]));
   for (const [s, a, text] of clean) {
-    const row = out.find((r) => r.s === s && r.a === a);
+    const row = byKey.get(`${s}:${a}`);
     if (row) { row.ar = text; row.arN = ` ${normAr(text)} `; }
   }
   quranIdx = out;

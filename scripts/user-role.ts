@@ -22,3 +22,5 @@ async function main() {
   console.log(`✓ ${email} → ${role}`);
 }
 main().then(() => process.exit(0), (e) => { console.error(e); process.exit(1); });
+
+export {};

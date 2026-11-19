@@ -39,22 +39,28 @@ function tick(done = false) {
   } catch { /* audio not available */ }
 }
 
-export function DhikrCounter({ slug, title, steps, targetNote, targetBasis, isSet }: Props) {
-  const { settings, update } = useSettings();
+export function DhikrCounter(props: Props) {
   const hydrated = useHydrated();
+  if (!hydrated) return <div className="mx-auto max-w-xl space-y-4"><div className="skeleton h-24" /><div className="skeleton mx-auto aspect-square w-[min(80vw,19rem)] !rounded-full" /></div>;
+  return <CounterInner {...props} />;
+}
+
+function CounterInner({ slug, title, steps, targetNote, targetBasis, isSet }: Props) {
+  const { settings, update } = useSettings();
+  const hydrated = true;
   const [dhikr] = useStore("dhikr");
-  const [step, setStep] = useState(0);
-  const [count, setCount] = useState(0);
+  const [live] = useState(() => readLive(slug));
+  const [step, setStep] = useState(live?.step ?? 0);
+  const [count, setCount] = useState(live?.count ?? 0);
   const [customTarget, setCustomTarget] = useState<number | null | undefined>(undefined);
   const [confirmReset, setConfirmReset] = useState(false);
   const [finished, setFinished] = useState(false);
-  const startedAt = useRef(Date.now());
+  const startedAt = useRef<number>(live?.startedAt ?? 0);
   const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const live = readLive(slug);
-    if (live) { setStep(live.step); setCount(live.count); startedAt.current = live.startedAt; }
-  }, [slug]);
+    if (!startedAt.current) startedAt.current = Date.now();
+  }, []);
   useEffect(() => {
     try { localStorage.setItem(LIVE_KEY, JSON.stringify({ slug, step, count, startedAt: startedAt.current } satisfies Live)); } catch { /* ignore */ }
   }, [slug, step, count]);

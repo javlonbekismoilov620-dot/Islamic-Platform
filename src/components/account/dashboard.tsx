@@ -92,14 +92,14 @@ export function Dashboard({ user, lookups }: { user: DashUser; lookups: Lookups 
 
       <section className="card glass p-5 sm:p-6">
         <h2 className="mb-4 flex items-center gap-2 font-semibold text-fg"><Target size={17} className="text-primary" /> Kunlik maqsadlar</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <GoalInput label="Har kuni oʻqiladigan oyatlar" value={goals.dailyAyahs} onChange={(v) => setGoals((g) => ({ ...g, dailyAyahs: v }))} progress={`Bugun: ${todayAyahs}`} />
           <GoalInput label="Har kungi zikr soni" value={goals.dailyDhikr} onChange={(v) => setGoals((g) => ({ ...g, dailyDhikr: v }))} progress={`Bugun: ${todayDhikr}`} />
         </div>
         <p className="mt-3 text-xs text-muted">Bu shaxsiy maqsadlar — diniy majburiyat emas. Kichik, lekin doimiy amal Allohga sevimliroq.</p>
       </section>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <section className="card glass p-5 sm:p-6">
           <h2 className="mb-3 flex items-center gap-2 font-semibold text-fg"><BookmarkCheck size={17} className="text-gold" /> Saqlanganlar</h2>
           <SavedGroup title="Oyatlar" items={bm.ayahs.map((id) => { const [s, a] = id.split(":"); return { key: id, label: `${lookups.surahs.find((x) => x.n === Number(s))?.uz} ${a}`, href: `/quron/${s}#oyat-${a}` }; })} />
@@ -243,7 +243,7 @@ function AccountSection({ user }: { user: NonNullable<DashUser> }) {
   return (
     <section className="card glass space-y-6 p-5 sm:p-6">
       <h2 className="font-semibold text-fg">Hisob</h2>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <form action={a1} className="space-y-3">
           <p className="text-sm font-medium text-fg">Ism</p>
           <FormAlert s={p1} />

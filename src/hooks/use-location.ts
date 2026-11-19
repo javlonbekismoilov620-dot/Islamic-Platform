@@ -1,4 +1,5 @@
 "use client";
+import { useMemo } from "react";
 import { useSettings } from "@/lib/store";
 import { cityBySlug } from "@/data/cities";
 
@@ -11,5 +12,6 @@ export function useLocation() {
 
 export function usePrayerSettings() {
   const { settings } = useSettings();
-  return { method: settings.prayerMethod, asr: settings.asrMethod, adjustments: settings.adjustments };
+  const { prayerMethod, asrMethod, adjustments } = settings;
+  return useMemo(() => ({ method: prayerMethod, asr: asrMethod, adjustments }), [prayerMethod, asrMethod, adjustments]);
 }

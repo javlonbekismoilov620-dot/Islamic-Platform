@@ -24,7 +24,7 @@ export default async function DuasPage() {
       <DuaZikrTabs active="duolar" />
       <PageHeader eyebrow="Duolar kutubxonasi" title="Duolar" subtitle={`${duas.length} ta duo, ${cats.length} ta toifa. Har bir duoning arabcha matni manbadan aynan olingan; ${verified} tasi hadis toʻplamlari yoki Qurʼon matni bilan avtomatik solishtirilgan.`} />
       <SavedDuas all={duas.map((d) => ({ slug: d.slug, title: d.title, category: d.body.categories[0] }))} />
-      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cats.map((c) => (
           <li key={c.slug}>
             <Link href={`/duolar/${c.slug}`} className="card glass group flex h-full items-start gap-4 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card">

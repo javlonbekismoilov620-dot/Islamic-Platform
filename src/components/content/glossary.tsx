@@ -14,7 +14,7 @@ export function Glossary({ items }: { items: G[] }) {
   const hydrated = useHydrated();
   const list = useMemo(() => {
     const n = normUz(q);
-    return items.filter((g) => !n || normUz(`${g.term} ${g.translit ?? ""} ${g.definition}`).includes(n)).sort((a, b) => a.term.localeCompare(b.term, "uz"));
+    return items.filter((g) => !n || normUz(`${g.term} ${g.translit ?? ""} ${g.definition}`).includes(n));
   }, [items, q]);
   return (
     <div>
@@ -23,7 +23,7 @@ export function Glossary({ items }: { items: G[] }) {
         <span className="sr-only">Atamani qidirish</span>
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Atama yoki izoh boʻyicha qidiring" className="h-full w-full bg-transparent outline-none placeholder:text-muted" />
       </label>
-      <dl className="grid gap-3 sm:grid-cols-2">
+      <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {list.map((g) => (
           <div key={g.slug} id={g.slug} className="card glass scroll-mt-28 p-5">
             <dt className="flex items-start justify-between gap-3">

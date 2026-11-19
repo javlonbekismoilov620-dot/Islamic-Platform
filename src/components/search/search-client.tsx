@@ -18,7 +18,7 @@ export function SearchClient({ initial }: { initial: string }) {
     const url = new URL(window.location.href);
     if (term) url.searchParams.set("q", term); else url.searchParams.delete("q");
     window.history.replaceState(null, "", url);
-    if (term.length < 2) { setRes(null); return; }
+    if (term.length < 2) return;
     const ctrl = new AbortController();
     const t = window.setTimeout(async () => {
       setLoading(true);
@@ -30,6 +30,7 @@ export function SearchClient({ initial }: { initial: string }) {
     return () => { ctrl.abort(); window.clearTimeout(t); };
   }, [q]);
 
+  const shown = q.trim().length >= 2 ? res : null;
   return (
     <div>
       <label className="glass-strong flex h-14 items-center gap-3 rounded-2xl px-5">
@@ -44,9 +45,9 @@ export function SearchClient({ initial }: { initial: string }) {
         </div>
       )}
       <div className="mt-6 min-h-[8rem]" aria-live="polite" aria-busy={loading}>
-        {loading && !res && <div className="space-y-3"><div className="skeleton h-16" /><div className="skeleton h-16" /></div>}
-        {res && res.total === 0 && q.trim().length >= 2 && <p className="py-10 text-center text-muted">«{q}» boʻyicha hech narsa topilmadi. Boshqa soʻz bilan urinib koʻring.</p>}
-        {res?.groups.map((g) => (
+        {loading && !shown && <div className="space-y-3"><div className="skeleton h-16" /><div className="skeleton h-16" /></div>}
+        {shown && shown.total === 0 && <p className="py-10 text-center text-muted">«{q}» boʻyicha hech narsa topilmadi. Boshqa soʻz bilan urinib koʻring.</p>}
+        {shown?.groups.map((g) => (
           <section key={g.name} className="mb-8">
             <h2 className="mb-2 text-sm font-semibold tracking-wide text-gold uppercase">{g.name}</h2>
             <ul className="space-y-2">

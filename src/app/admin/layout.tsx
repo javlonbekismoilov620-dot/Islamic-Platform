@@ -24,7 +24,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     ] : []),
   ];
   return (
-    <div className="grid gap-6 lg:grid-cols-[14rem_1fr]">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[14rem_1fr]">
       <aside className="lg:sticky lg:top-6 lg:self-start">
         <div className="card glass p-4">
           <Link href="/" className="mb-4 block"><Logo /></Link>

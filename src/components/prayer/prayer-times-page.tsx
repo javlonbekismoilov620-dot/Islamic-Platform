@@ -19,12 +19,11 @@ export function PrayerTimesPage() {
   const loc = useLocation();
   const ps = usePrayerSettings();
   const now = useNow(60_000);
-  const [month, setMonth] = useState<{ y: number; m: number } | null>(null);
+  const [monthOverride, setMonth] = useState<{ y: number; m: number } | null>(null);
   const [locating, setLocating] = useState(false);
 
-  useEffect(() => {
-    if (now && !month) { const p = tzParts(now); setMonth({ y: p.y, m: p.m }); }
-  }, [now, month]);
+  const nowParts = now ? tzParts(now) : null;
+  const month = useMemo(() => monthOverride ?? (nowParts ? { y: nowParts.y, m: nowParts.m } : null), [monthOverride, nowParts?.y, nowParts?.m]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const days = useMemo(() => {
     if (!month || !hydrated) return [];
@@ -73,7 +72,7 @@ export function PrayerTimesPage() {
       <section className="card glass p-5 sm:p-6">
         <h2 className="mb-1 font-semibold text-fg">Hisoblash usuli</h2>
         <p className="mb-4 text-sm text-muted">Namoz vaqtlari astronomik hisob-kitob bilan aniqlanadi. Turli tashkilotlar tong va shafaq uchun quyoshning turli burchaklarini qoʻllaydi.</p>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <label className="text-sm">
             <span className="mb-1.5 block font-medium text-fg">Bomdod va xufton burchaklari</span>
             <select value={settings.prayerMethod} onChange={(e) => update({ prayerMethod: e.target.value })} className="h-11 w-full rounded-xl border border-line bg-surface-solid px-3 text-fg">
@@ -147,8 +146,9 @@ function Reminders() {
   const [rem, setRem] = useStore("reminders");
   const loc = useLocation();
   const ps = usePrayerSettings();
-  const [perm, setPerm] = useState<NotificationPermission | "unsupported">("default");
-  useEffect(() => { setPerm(typeof Notification === "undefined" ? "unsupported" : Notification.permission); }, []);
+  const hydrated = useHydrated();
+  const [permOverride, setPerm] = useState<NotificationPermission | null>(null);
+  const perm: NotificationPermission | "unsupported" = permOverride ?? (!hydrated ? "default" : typeof Notification === "undefined" ? "unsupported" : Notification.permission);
 
   useEffect(() => {
     if (!rem.prayer || perm !== "granted") return;

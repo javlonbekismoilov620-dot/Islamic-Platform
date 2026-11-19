@@ -13,7 +13,7 @@ export default async function GlossaryPage() {
     <div className="mx-auto max-w-4xl">
       <PageHeader eyebrow="Lugʻat" title="Islomiy atamalar" subtitle={`${items.length} ta atama — arabcha yozilishi, aniq talaffuzi va qisqa izohi bilan.`} />
       <div className="mb-6"><ReviewNotice status={items[0]?.status ?? "in_review"} kind="glossary" compact /></div>
-      <Glossary items={items.map((g) => ({ slug: g.slug, term: g.title, arabic: g.body.arabic, translit: g.body.translit, definition: g.body.definition, ruling: g.body.ruling }))} />
+      <Glossary items={items.slice().sort((a, b) => (a.title < b.title ? -1 : a.title > b.title ? 1 : 0)).map((g) => ({ slug: g.slug, term: g.title, arabic: g.body.arabic, translit: g.body.translit, definition: g.body.definition, ruling: g.body.ruling }))} />
     </div>
   );
 }

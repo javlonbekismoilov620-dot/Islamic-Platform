@@ -35,7 +35,7 @@ export function HadithBrowser({ items, topics, collections }: { items: Item[]; t
         {collections.map((c) => <button key={c.key} type="button" className={chip(col === c.key)} onClick={() => setCol(c.key)}>{c.title}</button>)}
       </div>
       <p className="mb-3 text-sm text-muted">{list.length} ta hadis</p>
-      <ul className="grid gap-3 lg:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
         {list.map((h) => {
           const g = gradeSummary(h.collection, h.grades);
           return (

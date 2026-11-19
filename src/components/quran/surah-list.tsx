@@ -39,6 +39,7 @@ export function SurahList({ surahs }: { surahs: SurahItem[] }) {
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Sura nomi yoki raqami (masalan, Yosin, 36)" className="h-full w-full bg-transparent text-[0.95rem] outline-none placeholder:text-muted" />
         </label>
         <Segmented
+          className="no-scrollbar max-w-full overflow-x-auto"
           label="Saralash"
           value={filter}
           onChange={setFilter}
@@ -47,7 +48,7 @@ export function SurahList({ surahs }: { surahs: SurahItem[] }) {
         />
       </div>
       {list.length === 0 && <p className="py-10 text-center text-muted">Hech narsa topilmadi.</p>}
-      <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((s) => {
           const read = hydrated ? qp.maxAyah[String(s.n)] ?? 0 : 0;
           const pct = Math.round((read / s.ayahs) * 100);

@@ -70,10 +70,18 @@ function subscribe(key: StoreKey, cb: () => void) {
   };
 }
 
+const subscribeFns = new Map<StoreKey, (cb: () => void) => () => void>();
+function subscriberFor(key: StoreKey) {
+  let fn = subscribeFns.get(key);
+  if (!fn) { fn = (cb) => subscribe(key, cb); subscribeFns.set(key, fn); }
+  return fn;
+}
+const noopSubscribe = () => () => {};
+
 /** React hook. Server render va birinchi hydration standart qiymat bilan amalga oshiriladi. */
 export function useStore<K extends StoreKey>(key: K): [StoreShape[K], (v: StoreShape[K] | ((p: StoreShape[K]) => StoreShape[K])) => void] {
   const value = useSyncExternalStore(
-    (cb) => subscribe(key, cb),
+    subscriberFor(key),
     () => safeRead(key),
     () => DEFAULTS[key],
   );
@@ -89,7 +97,7 @@ export function useSettings() {
 /** True after hydration — use to avoid rendering locale/time-dependent UI on the server. */
 export function useHydrated() {
   return useSyncExternalStore(
-    () => () => {},
+    noopSubscribe,
     () => true,
     () => false,
   );

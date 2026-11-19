@@ -8,3 +8,5 @@ async function main() {
   console.log(r.seeded ? "✓ kontent yozildi" : "Bazada kontent allaqachon mavjud (--force bilan qayta yozish mumkin)");
 }
 main().then(() => process.exit(0), (e) => { console.error(e); process.exit(1); });
+
+export {};

@@ -242,6 +242,8 @@ Hanafiy mazhabida **niyat** va **tartib** tahoratda sunnat hisoblanadi, farz ema
 
 ## Bosqichma-bosqich tartib
 
+::steps{wudu}
+
 1. **Niyat qiling** va «Bismillāh» deng.
 2. **Qoʻllarni** bilaklargacha uch marta yuving, barmoqlar orasini ham.
 3. **Ogʻizni** uch marta chaying (roʻzador boʻlmasangiz, gʻargʻara qiling).

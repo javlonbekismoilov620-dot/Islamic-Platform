@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Compass, Info } from "lucide-react";
 import { useLocation } from "@/hooks/use-location";
 import { distanceToKaaba, qiblaBearing } from "@/lib/prayer";
@@ -14,11 +14,8 @@ export function QiblaCompass() {
   const hydrated = useHydrated();
   const bearing = qiblaBearing(loc.lat, loc.lng);
   const [heading, setHeading] = useState<number | null>(null);
-  const [state, setState] = useState<"idle" | "active" | "denied" | "unsupported">("idle");
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && !("DeviceOrientationEvent" in window)) setState("unsupported");
-  }, []);
+  const [rawState, setState] = useState<"idle" | "active" | "denied" | "unsupported">("idle");
+  const state = hydrated && !("DeviceOrientationEvent" in window) ? "unsupported" : rawState;
 
   const start = async () => {
     const DOE = window.DeviceOrientationEvent as OrientationWithPermission;
@@ -47,17 +44,17 @@ export function QiblaCompass() {
   const aligned = delta != null && Math.abs(delta) < 5;
 
   return (
-    <div className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-center">
-      <div className="relative mx-auto aspect-square w-[min(84vw,22rem)]">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr] md:items-center">
+      <div className="relative mx-auto aspect-square w-[min(84vw,22rem)] overflow-hidden rounded-full [--r:min(42vw,11rem)]">
         <div className={cn("hero absolute inset-0 rounded-full transition-shadow", aligned && "ring-4 ring-gold")} />
         <div className="absolute inset-0 transition-transform duration-300" style={{ transform: `rotate(${rot}deg)` }}>
           {["N", "E", "S", "W"].map((d, i) => (
-            <span key={d} className="absolute top-1/2 left-1/2 text-xs font-semibold text-[var(--hero-text)] opacity-80" style={{ transform: `rotate(${i * 90}deg) translateY(-9.2rem) rotate(${-i * 90}deg) translate(-50%, -50%)` }}>
+            <span key={d} className="absolute top-1/2 left-1/2 text-xs font-semibold text-[var(--hero-text)] opacity-80" style={{ transform: `rotate(${i * 90}deg) translateY(calc(-1 * var(--r) + 2rem)) rotate(${-i * 90}deg) translate(-50%, -50%)` }}>
               {{ N: "Sh", E: "Shq", S: "J", W: "Gʻ" }[d]}
             </span>
           ))}
           {Array.from({ length: 72 }).map((_, i) => (
-            <span key={i} className="absolute top-1/2 left-1/2 h-2 w-px origin-[0_0] bg-[var(--hero-text)] opacity-30" style={{ transform: `rotate(${i * 5}deg) translateY(-10.4rem)` }} />
+            <span key={i} className="absolute top-1/2 left-1/2 h-2 w-px origin-[0_0] bg-[var(--hero-text)] opacity-30" style={{ transform: `rotate(${i * 5}deg) translateY(calc(-1 * var(--r) + 0.6rem))` }} />
           ))}
           <div className="absolute inset-0" style={{ transform: `rotate(${bearing}deg)` }}>
             <div className="absolute top-[8%] left-1/2 flex -translate-x-1/2 flex-col items-center">

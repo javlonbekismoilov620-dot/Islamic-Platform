@@ -25,7 +25,7 @@ export default async function HadithPage({ params }: { params: Promise<{ slug: s
       {related.length > 0 && (
         <section className="mt-10">
           <h2 className="mb-3 text-lg font-semibold text-fg">Shu mavzudagi boshqa hadislar</h2>
-          <ul className="grid gap-2 sm:grid-cols-2">{related.map((r) => <li key={r.slug}><Link href={hadithHref(r)} className="card glass block px-4 py-3 text-sm font-medium text-fg-2 hover:text-primary">{r.title}</Link></li>)}</ul>
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">{related.map((r) => <li key={r.slug}><Link href={hadithHref(r)} className="card glass block px-4 py-3 text-sm font-medium text-fg-2 hover:text-primary">{r.title}</Link></li>)}</ul>
         </section>
       )}
     </div>

@@ -37,7 +37,7 @@ export function ContentEditor({ type, fields, item, categories }: {
       {item?.id && <input type="hidden" name="id" value={item.id} />}
       <input type="hidden" name="refs" value={JSON.stringify(refs)} />
       <Msg s={state} />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <label className="block sm:col-span-2"><span className="mb-1 block text-sm font-medium text-fg">Sarlavha *</span><input name="title" required defaultValue={item?.title} maxLength={200} className={input} /></label>
         <label className="block"><span className="mb-1 block text-sm font-medium text-fg">Slug (URL)</span><input name="slug" defaultValue={item?.slug} placeholder="avtomatik" pattern="[a-z0-9\-]*" className={input} /></label>
         <label className="block"><span className="mb-1 block text-sm font-medium text-fg">Toifa / mavzu</span>

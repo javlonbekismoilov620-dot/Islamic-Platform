@@ -46,7 +46,7 @@ export default function PronunciationPage() {
 
       <section className="mt-12">
         <SectionHeader title="Unlilar va belgilar" />
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {VOWEL_RULES.map((v) => (
             <li key={v.name} className="card glass p-5">
               <p className="flex items-center justify-between"><span className="font-semibold text-fg">{v.name}</span><span lang="ar" className="ar-inline text-2xl text-fg">{v.mark}</span></p>

@@ -16,7 +16,7 @@ export default async function CalendarPage() {
       <HijriCalendar events={events} />
       <section className="mt-10">
         <h2 className="mb-3 text-lg font-semibold text-fg">Doimiy nafl roʻzalar</h2>
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {RECURRING_FASTS.map((r) => (
             <li key={r.title} className="card glass p-5">
               <p className="font-semibold text-fg">{r.title}</p>

@@ -31,7 +31,7 @@ export function ContinueCards({ lessons, surahs }: { lessons: LessonLite[]; sura
   const next = lessons.find((l) => !learning.completed.includes(l.slug)) ?? lessons[0];
   const lr = hydrated && lastRead ? surahs.find((s) => s.n === lastRead.surah) : null;
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <Link href={lr ? `/quron/${lr.n}#oyat-${lastRead!.ayah}` : "/quron"} className="card glass group flex items-center gap-4 p-5 transition-transform hover:-translate-y-0.5">
         <Ring value={read / total}>{Math.round((read / total) * 100)}%</Ring>
         <div className="min-w-0 flex-1">

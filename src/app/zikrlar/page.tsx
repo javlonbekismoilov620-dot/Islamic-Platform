@@ -25,7 +25,7 @@ export default async function DhikrPage() {
       <DhikrToday titles={Object.fromEntries(all.map((d) => [d.slug, d.title]))} />
       <section className="mb-10">
         <SectionHeader title="Zikr toʻplamlari" subtitle="Ketma-ket bajariladigan zikrlar" />
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {sets.map((s) => (
             <li key={s.slug}>
               <Link href={`/zikrlar/${s.slug}`} className="hero group flex h-full flex-col p-5 transition-transform hover:-translate-y-0.5">
@@ -39,7 +39,7 @@ export default async function DhikrPage() {
       </section>
       <section>
         <SectionHeader title="Zikrlar" action={<Link href="/zikrlar/tarix" className="inline-flex items-center gap-1 text-sm font-medium text-primary"><History size={15} /> Tarix</Link>} />
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {singles.map((s) => (
             <li key={s.slug}>
               <Link href={`/zikrlar/${s.slug}`} className="card glass flex h-full flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-card">
