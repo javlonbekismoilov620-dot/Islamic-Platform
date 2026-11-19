@@ -203,18 +203,41 @@
  },
  {
   "id": "roziytu-billahi-robban",
-  "arabic": "رَضِيتُ بِاللَّهِ رَبَّاً، وَبِالْإِسْلاَمِ دِيناً، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيّاً",
+  "arabic": "رَضِيتُ بِاللَّهِ رَبًّا وَبِالإِسْلاَمِ دِينًا وَبِمُحَمَّدٍ نَبِيًّا",
   "origin": {
-   "kind": "hisn",
-   "book": "Hisnul muslim (Saʼid ibn Ali ibn Vahf al-Qahtoniy)",
-   "category": "أذكار الصباح والمساء",
-   "item": 13,
-   "recommendedCount": 3,
-   "dataset": "rn0x/Adhkar-json",
-   "sha256": "ee0df147cc9fdcbc8bed542703ba2d43f70329baa4d8ee7a99adf7929112a65f"
+   "kind": "hadith",
+   "collection": "tirmidhi",
+   "number": 3389,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "22b7ffbbca9beb5d4f108cc0389a3cd16917876b3ceb32993c46e1554afd871b"
   },
-  "checks": [],
-  "grades": [],
+  "checks": [
+   {
+    "collection": "tirmidhi",
+    "number": 3389,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [
+   {
+    "name": "Ahmad Muhammad Shakir",
+    "grade": "Daif"
+   },
+   {
+    "name": "Al-Albani",
+    "grade": "Daif"
+   },
+   {
+    "name": "Bashar Awad Maarouf",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Zubair Ali Zai",
+    "grade": "Hasan"
+   }
+  ],
   "verified": true
  },
  {
@@ -963,7 +986,7 @@
  },
  {
   "id": "robbigʻfirli-va-tub-alayya",
-  "arabic": "رَبِّ اغْفِرْ لِي وَتُبْ عَلَىَّ إِنَّكَ أَنْتَ التَّوَّابُ",
+  "arabic": "رَبِّ اغْفِرْ لِي وَتُبْ عَلَىَّ إِنَّكَ أَنْتَ التَّوَّابُ الْغَفُورُ",
   "origin": {
    "kind": "hadith",
    "collection": "tirmidhi",
@@ -1023,11 +1046,11 @@
  },
  {
   "id": "abu-bakr-duosi",
-  "arabic": "اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا ��َلاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ، وَارْحَمْنِي إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ",
+  "arabic": "اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا، وَلاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ، وَارْحَمْنِي، إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ",
   "origin": {
    "kind": "hadith",
    "collection": "bukhari",
-   "number": 834,
+   "number": 6326,
    "abdulBaqi": null,
    "dataset": "fawazahmed0/hadith-api",
    "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
@@ -1035,7 +1058,7 @@
   "checks": [
    {
     "collection": "bukhari",
-    "number": 834,
+    "number": 6326,
     "ok": true,
     "method": "extracted"
    }
@@ -1409,14 +1432,24 @@
  },
  {
   "id": "ogʻriq-uchun",
-  "arabic": "أَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",
+  "arabic": "بِاسْمِ اللَّهِ\nأَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",
   "origin": {
    "kind": "hadith",
    "collection": "muslim",
    "number": 5737,
    "abdulBaqi": "2202",
    "dataset": "fawazahmed0/hadith-api",
-   "sha256": "2cb296f3455ff8a3da9f6a0ca3de75da675788b2fb446ad316df297838e48217"
+   "sha256": "2cb296f3455ff8a3da9f6a0ca3de75da675788b2fb446ad316df297838e48217",
+   "lines": [
+    {
+     "label": "3 marta",
+     "arabic": "بِاسْمِ اللَّهِ"
+    },
+    {
+     "label": "7 marta",
+     "arabic": "أَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ"
+    }
+   ]
   },
   "checks": [
    {
@@ -1787,6 +1820,110 @@
   "verified": true
  },
  {
+  "id": "takbir",
+  "arabic": "اللَّهُ أَكْبَرُ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 795,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 795,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "taavvuz",
+  "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6115,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6115,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "basmala",
+  "arabic": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+  "origin": {
+   "kind": "quran",
+   "surah": 1,
+   "ayah": 1,
+   "to": 1,
+   "partial": false,
+   "segments": [
+    {
+     "a": 1,
+     "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+    }
+   ],
+   "text": "Tanzil Uthmani"
+  },
+  "checks": [],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "salom-berish",
+  "arabic": "السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "tirmidhi",
+   "number": 295,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "22b7ffbbca9beb5d4f108cc0389a3cd16917876b3ceb32993c46e1554afd871b"
+  },
+  "checks": [
+   {
+    "collection": "tirmidhi",
+    "number": 295,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [
+   {
+    "name": "Ahmad Muhammad Shakir",
+    "grade": "Sahih"
+   },
+   {
+    "name": "Al-Albani",
+    "grade": "Sahih"
+   },
+   {
+    "name": "Bashar Awad Maarouf",
+    "grade": "Hasan Sahih"
+   },
+   {
+    "name": "Zubair Ali Zai",
+    "grade": "Sahih"
+   }
+  ],
+  "verified": true
+ },
+ {
   "id": "sano",
   "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلاَ إِلَهَ غَيْرُكَ",
   "origin": {
@@ -1903,14 +2040,24 @@
  },
  {
   "id": "tashahhud",
-  "arabic": "التَّحِيَّاتُ لِلَّهِ، وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ‏.‏ فَإِنَّكُمْ إِذَا قُلْتُمُوهَا أَصَابَتْ كُلَّ عَبْدٍ لِلَّهِ صَالِحٍ فِي السَّمَاءِ وَالأَرْضِ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+  "arabic": "التَّحِيَّاتُ لِلَّهِ، وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ\nأَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
   "origin": {
    "kind": "hadith",
    "collection": "bukhari",
    "number": 831,
    "abdulBaqi": null,
    "dataset": "fawazahmed0/hadith-api",
-   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33",
+   "lines": [
+    {
+     "label": "",
+     "arabic": "التَّحِيَّاتُ لِلَّهِ، وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ"
+    },
+    {
+     "label": "",
+     "arabic": "أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ"
+    }
+   ]
   },
   "checks": [
    {
@@ -1982,6 +2129,28 @@
    {
     "collection": "muslim",
     "number": 554,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "azonni-eshitganda",
+  "arabic": "أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ وَأَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ رَضِيتُ بِاللَّهِ رَبًّا وَبِمُحَمَّدٍ رَسُولاً وَبِالإِسْلاَمِ دِينًا",
+  "origin": {
+   "kind": "hadith",
+   "collection": "muslim",
+   "number": 851,
+   "abdulBaqi": "386",
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "2cb296f3455ff8a3da9f6a0ca3de75da675788b2fb446ad316df297838e48217"
+  },
+  "checks": [
+   {
+    "collection": "muslim",
+    "number": 851,
     "ok": true,
     "method": "extracted"
    }

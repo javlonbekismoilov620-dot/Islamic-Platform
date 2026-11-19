@@ -39,6 +39,7 @@ for (const pick of HADITH_SELECTION) {
   if (!h) { console.error(`✗ ${pick.id}: ${pick.collection} ${pick.number} topilmadi`); failed++; continue; }
   const matn = findVerbatimSpan(h.text, pick.start, pick.end);
   if (!matn) { console.error(`✗ ${pick.id}: matn chegaralari topilmadi`); failed++; continue; }
+  if (matn.includes("\uFFFD")) { console.error(`✗ ${pick.id}: matnda buzilgan belgi (U+FFFD)`); failed++; continue; }
   out.push({
     id: pick.id,
     collection: pick.collection,

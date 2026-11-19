@@ -22,7 +22,7 @@ export const DUA_SELECTION: DuaPick[] = [
   { id: "allohumma-bika-asbahna", arabic: { kind: "hadith", collection: "tirmidhi", number: 3391, start: "اللهم بك أصبحنا وبك أمسينا", end: "وإليك المصير" } },
   { id: "allohumma-bika-amsayna", arabic: { kind: "hadith", collection: "tirmidhi", number: 3391, start: "اللهم بك أمسينا وبك أصبحنا", end: "وإليك النشور" } },
   { id: "bismillahillazi-la-yazurru", arabic: { kind: "hisn", start: "بسم الله الذي لا يضر مع اسمه شيء", end: "وهو السميع العليم" }, check: [{ collection: "tirmidhi", number: 3388 }, { collection: "abudawud", number: 5088 }] },
-  { id: "roziytu-billahi-robban", arabic: { kind: "hisn", start: "رضيت بالله ربا", end: "نبيا" } },
+  { id: "roziytu-billahi-robban", arabic: { kind: "hadith", collection: "tirmidhi", number: 3389, start: "رضيت بالله ربا", end: "وبمحمد نبيا" } },
   { id: "allohumma-afini-fi-badani", arabic: { kind: "hisn", start: "اللهم عافني في بدني", end: "لا إله إلا أنت" }, check: [{ collection: "abudawud", number: 5090 }] },
   { id: "auzu-bikalimatillahit-tammat", arabic: { kind: "hisn", start: "أعوذ بكلمات الله التامات من شر ما خلق" }, check: [{ collection: "muslim", number: 6878 }] },
   { id: "sayyidul-istigfor", arabic: { kind: "hadith", collection: "bukhari", number: 6306, start: "اللهم أنت ربي لا إله إلا أنت", end: "فإنه لا يغفر الذنوب إلا أنت" } },
@@ -52,9 +52,9 @@ export const DUA_SELECTION: DuaPick[] = [
   { id: "safardan-qaytganda", arabic: { kind: "hisn", start: "آيبون تائبون عابدون لربنا حامدون" }, check: [{ collection: "muslim", number: 3275 }] },
   // Tavba
   { id: "astagʻfirullohal-aziym", arabic: { kind: "hisn", start: "أستغفر الله العظيم الذي لا إله إلا هو الحي القيوم وأتوب إليه" }, check: [{ collection: "tirmidhi", number: 3577 }] },
-  { id: "robbigʻfirli-va-tub-alayya", arabic: { kind: "hadith", collection: "tirmidhi", number: 3434, start: "رب اغفر لي وتب علي إنك أنت التواب" } },
+  { id: "robbigʻfirli-va-tub-alayya", arabic: { kind: "hadith", collection: "tirmidhi", number: 3434, start: "رب اغفر لي وتب علي", end: "إنك أنت التواب الغفور" } },
   { id: "robbana-zolamna", arabic: { kind: "quran", s: 7, a: 23, start: "ربنا ظلمنا أنفسنا" } },
-  { id: "abu-bakr-duosi", arabic: { kind: "hadith", collection: "bukhari", number: 834, start: "اللهم إني ظلمت نفسي ظلما كثيرا", end: "إنك أنت الغفور الرحيم" } },
+  { id: "abu-bakr-duosi", arabic: { kind: "hadith", collection: "bukhari", number: 6326, start: "اللهم إني ظلمت نفسي ظلما كثيرا", end: "إنك أنت الغفور الرحيم" } },
   // Shukr
   { id: "robbi-avzigʻniy", arabic: { kind: "quran", s: 27, a: 19, start: "رب أوزعني" } },
   { id: "allohumma-ainni-ala-zikrika", arabic: { kind: "hadith", collection: "abudawud", number: 1522, start: "اللهم أعني على ذكرك وشكرك وحسن عبادتك" } },
@@ -75,7 +75,7 @@ export const DUA_SELECTION: DuaPick[] = [
   { id: "musibat-duosi", arabic: { kind: "hadith", collection: "muslim", number: 2126, start: "إنا لله وإنا إليه راجعون اللهم أجرني في مصيبتي", end: "خيرا منها" } },
   // Kasallik
   { id: "bemor-uchun-ruqya", arabic: { kind: "hadith", collection: "bukhari", number: 5675, start: "أذهب البأس رب الناس", end: "شفاء لا يغادر سقما" } },
-  { id: "ogʻriq-uchun", arabic: { kind: "hadith", collection: "muslim", number: 5737, start: "أعوذ بالله وقدرته من شر ما أجد وأحاذر" } },
+  { id: "ogʻriq-uchun", arabic: { kind: "hadith-lines", collection: "muslim", number: 5737, lines: [{ label: "3 marta", start: "باسم الله" }, { label: "7 marta", start: "أعوذ بالله وقدرته من شر ما أجد وأحاذر" }] } },
   { id: "bemorni-yoqlaganda", arabic: { kind: "hadith", collection: "bukhari", number: 3616, start: "لا بأس طهور إن شاء الله" } },
   // Kundalik
   { id: "aksirganda", arabic: { kind: "hadith-lines", collection: "bukhari", number: 6224, lines: [{ label: "Aksa urgan kishi aytadi", start: "الحمد لله" }, { label: "Eshitgan kishi javob beradi", start: "يرحمك الله" }, { label: "Aksa urgan kishi qaytaradi", start: "يهديكم الله ويصلح بالكم" }] } },
@@ -91,14 +91,19 @@ export const DUA_SELECTION: DuaPick[] = [
   { id: "robbana-atina", arabic: { kind: "quran", s: 2, a: 201, start: "ربنا آتنا في الدنيا حسنة" } },
   { id: "arafa-kuni-duosi", arabic: { kind: "hadith", collection: "tirmidhi", number: 3585, start: "لا إله إلا الله وحده لا شريك له", end: "وهو على كل شيء قدير" } },
   // Namoz
+  { id: "takbir", arabic: { kind: "hadith", collection: "bukhari", number: 795, start: "الله أكبر" } },
+  { id: "taavvuz", arabic: { kind: "hadith", collection: "bukhari", number: 6115, start: "أعوذ بالله من الشيطان الرجيم" } },
+  { id: "basmala", arabic: { kind: "quran", s: 1, a: 1 } },
+  { id: "salom-berish", arabic: { kind: "hadith", collection: "tirmidhi", number: 295, start: "السلام عليكم ورحمة الله" } },
   { id: "sano", arabic: { kind: "hadith", collection: "tirmidhi", number: 243, start: "سبحانك اللهم وبحمدك وتبارك اسمك وتعالى جدك ولا إله غيرك" } },
   { id: "ruku-tasbehi", arabic: { kind: "hadith", collection: "muslim", number: 1814, start: "سبحان ربي العظيم" } },
   { id: "sajda-tasbehi", arabic: { kind: "hadith", collection: "muslim", number: 1814, start: "سبحان ربي الأعلى" } },
   { id: "tasmi-va-tahmid", arabic: { kind: "hadith-lines", collection: "bukhari", number: 795, lines: [{ label: "Ruku’dan turayotganda (tasmiʼ)", start: "سمع الله لمن حمده" }, { label: "Qad rostlaganda (tahmid)", start: "اللهم ربنا ولك الحمد" }] } },
-  { id: "tashahhud", arabic: { kind: "hadith", collection: "bukhari", number: 831, start: "التحيات لله والصلوات والطيبات", end: "وأشهد أن محمدا عبده ورسوله" } },
+  { id: "tashahhud", arabic: { kind: "hadith-lines", collection: "bukhari", number: 831, lines: [{ label: "", start: "التحيات لله والصلوات والطيبات", end: "وعلى عباد الله الصالحين" }, { label: "", start: "أشهد أن لا إله إلا الله", end: "وأشهد أن محمدا عبده ورسوله" }] } },
   { id: "salovoti-ibrohimiya", arabic: { kind: "hadith", collection: "bukhari", number: 3370, start: "اللهم صل على محمد وعلى آل محمد", end: "إنك حميد مجيد اللهم بارك على محمد وعلى آل محمد كما باركت على إبراهيم وعلى آل إبراهيم إنك حميد مجيد" } },
   { id: "allohumma-antas-salom", arabic: { kind: "hadith", collection: "muslim", number: 1334, start: "اللهم أنت السلام ومنك السلام", end: "ذا الجلال والإكرام" } },
   { id: "tahoratdan-keyin", arabic: { kind: "hadith", collection: "muslim", number: 554, start: "أشهد أن لا إله إلا الله وحده لا شريك له", end: "وأشهد أن محمدا عبده ورسوله" } },
+  { id: "azonni-eshitganda", arabic: { kind: "hadith", collection: "muslim", number: 851, start: "أشهد أن لا إله إلا الله وحده لا شريك له", end: "وبالإسلام دينا" } },
   { id: "azondan-keyin", arabic: { kind: "hadith", collection: "bukhari", number: 614, start: "اللهم رب هذه الدعوة التامة", end: "الذي وعدته" } },
   {
     id: "qunut-duosi",
@@ -108,4 +113,19 @@ export const DUA_SELECTION: DuaPick[] = [
       note: "Hanafiy mazhabidagi vitr qunuti. Ushbu toʻplamlarda (Kutubi sitta) mavjud emas; Ibn Abu Shayba va Bayhaqiy rivoyatlari hamda Hanafiy fiqh kitoblari bilan qoʻlda solishtirilishi shart.",
     },
   },
+];
+
+/** Zikr hisoblagichi uchun qisqa zikrlar — arabcha lafz hadis matnidan aynan kesib olinadi. */
+export const DHIKR_SELECTION: DuaPick[] = [
+  { id: "subhanalloh", arabic: { kind: "hadith", collection: "bukhari", number: 6406, start: "سبحان الله" } },
+  { id: "alhamdulillah", arabic: { kind: "hadith", collection: "tirmidhi", number: 3383, start: "الحمد لله" } },
+  { id: "allohu-akbar", arabic: { kind: "hadith", collection: "bukhari", number: 795, start: "الله أكبر" } },
+  { id: "astagfirulloh", arabic: { kind: "hadith", collection: "muslim", number: 1334, start: "أستغفر الله" } },
+  { id: "la-ilaha-illalloh", arabic: { kind: "hadith", collection: "tirmidhi", number: 3383, start: "لا إله إلا الله" } },
+  { id: "subhanallohi-va-bihamdihi", arabic: { kind: "hadith", collection: "bukhari", number: 6405, start: "سبحان الله وبحمده" } },
+  { id: "subhanallohil-aziym", arabic: { kind: "hadith", collection: "bukhari", number: 6406, start: "سبحان الله العظيم" } },
+  { id: "la-havla-va-la-quvvata", arabic: { kind: "hadith", collection: "bukhari", number: 6384, start: "لا حول ولا قوة إلا بالله" } },
+  { id: "salovot", arabic: { kind: "hadith", collection: "bukhari", number: 3370, start: "اللهم صل على محمد", end: "وعلى آل محمد" } },
+  { id: "tahlil", arabic: { kind: "hadith", collection: "bukhari", number: 6403, start: "لا إله إلا الله وحده لا شريك له", end: "وهو على كل شيء قدير" } },
+  { id: "astagfirulloh-va-atubu-ilayh", arabic: { kind: "hadith", collection: "bukhari", number: 6307, start: "أستغفر الله وأتوب إليه" } },
 ];

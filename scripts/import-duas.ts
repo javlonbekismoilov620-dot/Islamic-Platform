@@ -8,7 +8,7 @@ import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { arabicContains, findVerbatimSpan, normalizeArabic } from "../src/lib/arabic";
-import { DUA_SELECTION } from "../src/content/sources/dua-selection";
+import { DHIKR_SELECTION, DUA_SELECTION, type DuaPick } from "../src/content/sources/dua-selection";
 
 const ADHKAR = process.env.ADHKAR_JSON!;
 const HADITH = process.env.HADITH_API_DIR!;
@@ -48,9 +48,10 @@ function quranSegments(s: number, a: number, to = a, start?: string, end?: strin
   return segs;
 }
 
-const out = [];
 let failed = 0;
-for (const d of DUA_SELECTION) {
+function build(list: DuaPick[]) {
+const out = [];
+for (const d of list) {
   const spec = d.arabic;
   let arabic: string | null = null;
   let origin: Record<string, unknown> = {};
@@ -84,6 +85,7 @@ for (const d of DUA_SELECTION) {
     origin = { kind: "manual", note: spec.note };
   }
   if (!arabic) { console.error(`✗ ${d.id}: arabcha matn topilmadi`); failed++; continue; }
+  if (arabic.includes("\uFFFD")) { console.error(`✗ ${d.id}: manba matnida buzilgan belgi (U+FFFD) bor — boshqa rivoyat tanlang`); failed++; continue; }
 
   const checks = [];
   if (spec.kind === "hadith" || spec.kind === "hadith-lines") checks.push({ collection: spec.collection, number: spec.number, ok: true, method: "extracted" });
@@ -97,6 +99,11 @@ for (const d of DUA_SELECTION) {
   out.push({ id: d.id, arabic, origin, checks, grades, verified: spec.kind !== "manual" && checks.every((c) => c.ok) });
   console.log(`✓ ${d.id.padEnd(34)} ${spec.kind}${checks.length ? ` · ${checks.filter((c) => c.ok).length}/${checks.length} mos` : ""}`);
 }
-writeFileSync(path.resolve("src/content/sources/dua-sources.json"), JSON.stringify(out, null, 1));
-console.log(`${out.length} ta duo yozildi, ${failed} ta muammo`);
+return out;
+}
+const duas = build(DUA_SELECTION);
+const dhikr = build(DHIKR_SELECTION);
+writeFileSync(path.resolve("src/content/sources/dua-sources.json"), JSON.stringify(duas, null, 1));
+writeFileSync(path.resolve("src/content/sources/dhikr-sources.json"), JSON.stringify(dhikr, null, 1));
+console.log(`${duas.length} ta duo, ${dhikr.length} ta zikr yozildi, ${failed} ta muammo`);
 if (failed) process.exitCode = 1;

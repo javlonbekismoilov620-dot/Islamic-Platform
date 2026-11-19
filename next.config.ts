@@ -36,6 +36,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  agentRules: false,
   reactStrictMode: true,
   serverExternalPackages: ["@electric-sql/pglite"],
   outputFileTracingIncludes: {
