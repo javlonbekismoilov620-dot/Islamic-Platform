@@ -1,0 +1,1189 @@
+{
+ "generatedFrom": "github.com/risan/quran-json (verbatim snapshots)",
+ "arabic": {
+  "title": "Tanzil — Uthmani matni",
+  "url": "https://tanzil.net",
+  "license": "Tanzil Quran Text / Copyright (C) 2007-2021 Tanzil Project / Creative Commons Attribution 3.0. Permission is granted to copy and distribute verbatim copies of this text, but CHANGING IT IS NOT ALLOWED.",
+  "licenseUrl": "https://tanzil.net/docs/text_license",
+  "sha256": "adaebb377c60eba1bab6ef652959c7a0b4ccb4d0ca42145945c14ecdbeb4b761",
+  "searchTextSha256": "c073e908f5ca16978328652d38648e65c15c69f4ea15c5392056c226339eacfa"
+ },
+ "translations": [
+  {
+   "key": "sodiq",
+   "titleUz": "Muhammad Sodiq Muhammad Yusuf tarjimasi",
+   "translator": "Shayx Muhammad Sodiq Muhammad Yusuf",
+   "publisher": "QuranEnc.com (Qurʼoniy tarjimalar ensiklopediyasi)",
+   "edition": "Uzbek Translation - Muhammad Sadiq",
+   "version": "1.0.1",
+   "script": "kirill",
+   "url": "https://quranenc.com/en/browse/uzbek_sadiq/",
+   "downloadUrl": "https://quranenc.com/downloads/sqlite/uzbek_sadiq.zip",
+   "terms": "QuranEnc.com permits download and re-publication of translation contents on 7 conditions: no modification/addition/deletion; credit the publisher and QuranEnc.com; state the version number; keep the transcript information; report notes back; keep up to date with the latest version; no inappropriate advertising.",
+   "sha256": "26c80cdd69a38e928545264450a18b9a41a447c6e77d02e5ae95f56077d10a48"
+  },
+  {
+   "key": "mansur",
+   "titleUz": "Alouddin Mansur tarjimasi",
+   "translator": "Alouddin Mansur",
+   "publisher": "QuranEnc.com (Qurʼoniy tarjimalar ensiklopediyasi)",
+   "edition": "Uzbek Translation - Alaauddin Mansour",
+   "version": "1.0.0",
+   "script": "kirill",
+   "url": "https://quranenc.com/en/browse/uzbek_mansour/",
+   "downloadUrl": "https://quranenc.com/downloads/sqlite/uzbek_mansour.zip",
+   "terms": "QuranEnc.com permits download and re-publication of translation contents on 7 conditions: no modification/addition/deletion; credit the publisher and QuranEnc.com; state the version number; keep the transcript information; report notes back; keep up to date with the latest version; no inappropriate advertising.",
+   "sha256": "acdbe3490aacb1a4f9febc7778a16bf2b5925c2ca70306d0ec19d088577d11cb"
+  },
+  {
+   "key": "ruvvod",
+   "titleUz": "Ruvvod tarjima markazi tarjimasi",
+   "translator": "Ruvvod tarjima markazi",
+   "publisher": "QuranEnc.com (Qurʼoniy tarjimalar ensiklopediyasi)",
+   "edition": "Uzbek Translation - Rowwad Translation Center",
+   "version": "1.0.4",
+   "script": "kirill",
+   "url": "https://quranenc.com/en/browse/uzbek_rwwad/",
+   "downloadUrl": "https://quranenc.com/downloads/sqlite/uzbek_rwwad.zip",
+   "terms": "QuranEnc.com permits download and re-publication of translation contents on 7 conditions: no modification/addition/deletion; credit the publisher and QuranEnc.com; state the version number; keep the transcript information; report notes back; keep up to date with the latest version; no inappropriate advertising.",
+   "sha256": "f3215e5a75066a246013563a75164d59e3a91de13fc7f867fc4433a4c90b4bbb"
+  }
+ ],
+ "surahs": [
+  {
+   "n": 1,
+   "ar": "الفاتحة",
+   "tanzil": "Al-Faatiha",
+   "uz": "Fotiha",
+   "meaning": "Ochuvchi",
+   "type": "makkiy",
+   "ayahs": 7
+  },
+  {
+   "n": 2,
+   "ar": "البقرة",
+   "tanzil": "Al-Baqara",
+   "uz": "Baqara",
+   "meaning": "Sigir",
+   "type": "madaniy",
+   "ayahs": 286
+  },
+  {
+   "n": 3,
+   "ar": "آل عمران",
+   "tanzil": "Aal-i-Imraan",
+   "uz": "Oli Imron",
+   "meaning": "Imron oilasi",
+   "type": "madaniy",
+   "ayahs": 200
+  },
+  {
+   "n": 4,
+   "ar": "النساء",
+   "tanzil": "An-Nisaa",
+   "uz": "Niso",
+   "meaning": "Ayollar",
+   "type": "madaniy",
+   "ayahs": 176
+  },
+  {
+   "n": 5,
+   "ar": "المائدة",
+   "tanzil": "Al-Maaida",
+   "uz": "Moida",
+   "meaning": "Dasturxon",
+   "type": "madaniy",
+   "ayahs": 120
+  },
+  {
+   "n": 6,
+   "ar": "الأنعام",
+   "tanzil": "Al-An'aam",
+   "uz": "Anʼom",
+   "meaning": "Chorva hayvonlari",
+   "type": "makkiy",
+   "ayahs": 165
+  },
+  {
+   "n": 7,
+   "ar": "الأعراف",
+   "tanzil": "Al-A'raaf",
+   "uz": "Aʼrof",
+   "meaning": "Aʼrof (toʻsiq ustidagi tepaliklar)",
+   "type": "makkiy",
+   "ayahs": 206
+  },
+  {
+   "n": 8,
+   "ar": "الأنفال",
+   "tanzil": "Al-Anfaal",
+   "uz": "Anfol",
+   "meaning": "Oʻljalar",
+   "type": "madaniy",
+   "ayahs": 75
+  },
+  {
+   "n": 9,
+   "ar": "التوبة",
+   "tanzil": "At-Tawba",
+   "uz": "Tavba",
+   "meaning": "Tavba",
+   "type": "madaniy",
+   "ayahs": 129
+  },
+  {
+   "n": 10,
+   "ar": "يونس",
+   "tanzil": "Yunus",
+   "uz": "Yunus",
+   "meaning": "Yunus alayhissalom",
+   "type": "makkiy",
+   "ayahs": 109
+  },
+  {
+   "n": 11,
+   "ar": "هود",
+   "tanzil": "Hud",
+   "uz": "Hud",
+   "meaning": "Hud alayhissalom",
+   "type": "makkiy",
+   "ayahs": 123
+  },
+  {
+   "n": 12,
+   "ar": "يوسف",
+   "tanzil": "Yusuf",
+   "uz": "Yusuf",
+   "meaning": "Yusuf alayhissalom",
+   "type": "makkiy",
+   "ayahs": 111
+  },
+  {
+   "n": 13,
+   "ar": "الرعد",
+   "tanzil": "Ar-Ra'd",
+   "uz": "Raʼd",
+   "meaning": "Momaqaldiroq",
+   "type": "madaniy",
+   "ayahs": 43
+  },
+  {
+   "n": 14,
+   "ar": "ابراهيم",
+   "tanzil": "Ibrahim",
+   "uz": "Ibrohim",
+   "meaning": "Ibrohim alayhissalom",
+   "type": "makkiy",
+   "ayahs": 52
+  },
+  {
+   "n": 15,
+   "ar": "الحجر",
+   "tanzil": "Al-Hijr",
+   "uz": "Hijr",
+   "meaning": "Hijr vodiysi",
+   "type": "makkiy",
+   "ayahs": 99
+  },
+  {
+   "n": 16,
+   "ar": "النحل",
+   "tanzil": "An-Nahl",
+   "uz": "Nahl",
+   "meaning": "Asalari",
+   "type": "makkiy",
+   "ayahs": 128
+  },
+  {
+   "n": 17,
+   "ar": "الإسراء",
+   "tanzil": "Al-Israa",
+   "uz": "Isro",
+   "meaning": "Tungi sayr",
+   "type": "makkiy",
+   "ayahs": 111
+  },
+  {
+   "n": 18,
+   "ar": "الكهف",
+   "tanzil": "Al-Kahf",
+   "uz": "Kahf",
+   "meaning": "Gʻor",
+   "type": "makkiy",
+   "ayahs": 110
+  },
+  {
+   "n": 19,
+   "ar": "مريم",
+   "tanzil": "Maryam",
+   "uz": "Maryam",
+   "meaning": "Maryam",
+   "type": "makkiy",
+   "ayahs": 98
+  },
+  {
+   "n": 20,
+   "ar": "طه",
+   "tanzil": "Taa-Haa",
+   "uz": "Toha",
+   "meaning": "To. Ho.",
+   "type": "makkiy",
+   "ayahs": 135
+  },
+  {
+   "n": 21,
+   "ar": "الأنبياء",
+   "tanzil": "Al-Anbiyaa",
+   "uz": "Anbiyo",
+   "meaning": "Paygʻambarlar",
+   "type": "makkiy",
+   "ayahs": 112
+  },
+  {
+   "n": 22,
+   "ar": "الحج",
+   "tanzil": "Al-Hajj",
+   "uz": "Haj",
+   "meaning": "Haj",
+   "type": "madaniy",
+   "ayahs": 78
+  },
+  {
+   "n": 23,
+   "ar": "المؤمنون",
+   "tanzil": "Al-Muminoon",
+   "uz": "Muʼminun",
+   "meaning": "Moʻminlar",
+   "type": "makkiy",
+   "ayahs": 118
+  },
+  {
+   "n": 24,
+   "ar": "النور",
+   "tanzil": "An-Noor",
+   "uz": "Nur",
+   "meaning": "Nur",
+   "type": "madaniy",
+   "ayahs": 64
+  },
+  {
+   "n": 25,
+   "ar": "الفرقان",
+   "tanzil": "Al-Furqaan",
+   "uz": "Furqon",
+   "meaning": "Haq bilan botilni ajratuvchi",
+   "type": "makkiy",
+   "ayahs": 77
+  },
+  {
+   "n": 26,
+   "ar": "الشعراء",
+   "tanzil": "Ash-Shu'araa",
+   "uz": "Shuaro",
+   "meaning": "Shoirlar",
+   "type": "makkiy",
+   "ayahs": 227
+  },
+  {
+   "n": 27,
+   "ar": "النمل",
+   "tanzil": "An-Naml",
+   "uz": "Naml",
+   "meaning": "Chumolilar",
+   "type": "makkiy",
+   "ayahs": 93
+  },
+  {
+   "n": 28,
+   "ar": "القصص",
+   "tanzil": "Al-Qasas",
+   "uz": "Qasas",
+   "meaning": "Qissalar",
+   "type": "makkiy",
+   "ayahs": 88
+  },
+  {
+   "n": 29,
+   "ar": "العنكبوت",
+   "tanzil": "Al-Ankaboot",
+   "uz": "Ankabut",
+   "meaning": "Oʻrgimchak",
+   "type": "makkiy",
+   "ayahs": 69
+  },
+  {
+   "n": 30,
+   "ar": "الروم",
+   "tanzil": "Ar-Room",
+   "uz": "Rum",
+   "meaning": "Rumliklar",
+   "type": "makkiy",
+   "ayahs": 60
+  },
+  {
+   "n": 31,
+   "ar": "لقمان",
+   "tanzil": "Luqman",
+   "uz": "Luqmon",
+   "meaning": "Luqmon",
+   "type": "makkiy",
+   "ayahs": 34
+  },
+  {
+   "n": 32,
+   "ar": "السجدة",
+   "tanzil": "As-Sajda",
+   "uz": "Sajda",
+   "meaning": "Sajda",
+   "type": "makkiy",
+   "ayahs": 30
+  },
+  {
+   "n": 33,
+   "ar": "الأحزاب",
+   "tanzil": "Al-Ahzaab",
+   "uz": "Ahzob",
+   "meaning": "Firqalar",
+   "type": "madaniy",
+   "ayahs": 73
+  },
+  {
+   "n": 34,
+   "ar": "سبإ",
+   "tanzil": "Saba",
+   "uz": "Saba",
+   "meaning": "Saba",
+   "type": "makkiy",
+   "ayahs": 54
+  },
+  {
+   "n": 35,
+   "ar": "فاطر",
+   "tanzil": "Faatir",
+   "uz": "Fotir",
+   "meaning": "Yaratuvchi",
+   "type": "makkiy",
+   "ayahs": 45
+  },
+  {
+   "n": 36,
+   "ar": "يس",
+   "tanzil": "Yaseen",
+   "uz": "Yosin",
+   "meaning": "Yo. Sin.",
+   "type": "makkiy",
+   "ayahs": 83
+  },
+  {
+   "n": 37,
+   "ar": "الصافات",
+   "tanzil": "As-Saaffaat",
+   "uz": "Soffot",
+   "meaning": "Saf tortuvchilar",
+   "type": "makkiy",
+   "ayahs": 182
+  },
+  {
+   "n": 38,
+   "ar": "ص",
+   "tanzil": "Saad",
+   "uz": "Sod",
+   "meaning": "Sod",
+   "type": "makkiy",
+   "ayahs": 88
+  },
+  {
+   "n": 39,
+   "ar": "الزمر",
+   "tanzil": "Az-Zumar",
+   "uz": "Zumar",
+   "meaning": "Guruhlar",
+   "type": "makkiy",
+   "ayahs": 75
+  },
+  {
+   "n": 40,
+   "ar": "غافر",
+   "tanzil": "Al-Ghaafir",
+   "uz": "Gʻofir",
+   "meaning": "Kechiruvchi",
+   "type": "makkiy",
+   "ayahs": 85
+  },
+  {
+   "n": 41,
+   "ar": "فصلت",
+   "tanzil": "Fussilat",
+   "uz": "Fussilat",
+   "meaning": "Batafsil bayon qilingan",
+   "type": "makkiy",
+   "ayahs": 54
+  },
+  {
+   "n": 42,
+   "ar": "الشورى",
+   "tanzil": "Ash-Shura",
+   "uz": "Shuro",
+   "meaning": "Maslahat",
+   "type": "makkiy",
+   "ayahs": 53
+  },
+  {
+   "n": 43,
+   "ar": "الزخرف",
+   "tanzil": "Az-Zukhruf",
+   "uz": "Zuxruf",
+   "meaning": "Zeb-ziynat",
+   "type": "makkiy",
+   "ayahs": 89
+  },
+  {
+   "n": 44,
+   "ar": "الدخان",
+   "tanzil": "Ad-Dukhaan",
+   "uz": "Duxon",
+   "meaning": "Tutun",
+   "type": "makkiy",
+   "ayahs": 59
+  },
+  {
+   "n": 45,
+   "ar": "الجاثية",
+   "tanzil": "Al-Jaathiya",
+   "uz": "Josiya",
+   "meaning": "Tiz choʻkuvchi",
+   "type": "makkiy",
+   "ayahs": 37
+  },
+  {
+   "n": 46,
+   "ar": "الأحقاف",
+   "tanzil": "Al-Ahqaf",
+   "uz": "Ahqof",
+   "meaning": "Qum tepaliklari",
+   "type": "makkiy",
+   "ayahs": 35
+  },
+  {
+   "n": 47,
+   "ar": "محمد",
+   "tanzil": "Muhammad",
+   "uz": "Muhammad",
+   "meaning": "Muhammad sollallohu alayhi vasallam",
+   "type": "madaniy",
+   "ayahs": 38
+  },
+  {
+   "n": 48,
+   "ar": "الفتح",
+   "tanzil": "Al-Fath",
+   "uz": "Fath",
+   "meaning": "Fath (gʻalaba)",
+   "type": "madaniy",
+   "ayahs": 29
+  },
+  {
+   "n": 49,
+   "ar": "الحجرات",
+   "tanzil": "Al-Hujuraat",
+   "uz": "Hujurot",
+   "meaning": "Hujralar",
+   "type": "madaniy",
+   "ayahs": 18
+  },
+  {
+   "n": 50,
+   "ar": "ق",
+   "tanzil": "Qaaf",
+   "uz": "Qof",
+   "meaning": "Qof",
+   "type": "makkiy",
+   "ayahs": 45
+  },
+  {
+   "n": 51,
+   "ar": "الذاريات",
+   "tanzil": "Adh-Dhaariyat",
+   "uz": "Zoriyot",
+   "meaning": "Sochib yuboruvchi shamollar",
+   "type": "makkiy",
+   "ayahs": 60
+  },
+  {
+   "n": 52,
+   "ar": "الطور",
+   "tanzil": "At-Tur",
+   "uz": "Tur",
+   "meaning": "Tur togʻi",
+   "type": "makkiy",
+   "ayahs": 49
+  },
+  {
+   "n": 53,
+   "ar": "النجم",
+   "tanzil": "An-Najm",
+   "uz": "Najm",
+   "meaning": "Yulduz",
+   "type": "makkiy",
+   "ayahs": 62
+  },
+  {
+   "n": 54,
+   "ar": "القمر",
+   "tanzil": "Al-Qamar",
+   "uz": "Qamar",
+   "meaning": "Oy",
+   "type": "makkiy",
+   "ayahs": 55
+  },
+  {
+   "n": 55,
+   "ar": "الرحمن",
+   "tanzil": "Ar-Rahmaan",
+   "uz": "Rahmon",
+   "meaning": "Rahmon",
+   "type": "madaniy",
+   "ayahs": 78
+  },
+  {
+   "n": 56,
+   "ar": "الواقعة",
+   "tanzil": "Al-Waaqia",
+   "uz": "Voqea",
+   "meaning": "Voqea (Qiyomat)",
+   "type": "makkiy",
+   "ayahs": 96
+  },
+  {
+   "n": 57,
+   "ar": "الحديد",
+   "tanzil": "Al-Hadid",
+   "uz": "Hadid",
+   "meaning": "Temir",
+   "type": "madaniy",
+   "ayahs": 29
+  },
+  {
+   "n": 58,
+   "ar": "المجادلة",
+   "tanzil": "Al-Mujaadila",
+   "uz": "Mujodala",
+   "meaning": "Mujodala (bahs)",
+   "type": "madaniy",
+   "ayahs": 22
+  },
+  {
+   "n": 59,
+   "ar": "الحشر",
+   "tanzil": "Al-Hashr",
+   "uz": "Hashr",
+   "meaning": "Toʻplanish",
+   "type": "madaniy",
+   "ayahs": 24
+  },
+  {
+   "n": 60,
+   "ar": "الممتحنة",
+   "tanzil": "Al-Mumtahana",
+   "uz": "Mumtahana",
+   "meaning": "Imtihon qilinuvchi ayol",
+   "type": "madaniy",
+   "ayahs": 13
+  },
+  {
+   "n": 61,
+   "ar": "الصف",
+   "tanzil": "As-Saff",
+   "uz": "Soff",
+   "meaning": "Saf",
+   "type": "madaniy",
+   "ayahs": 14
+  },
+  {
+   "n": 62,
+   "ar": "الجمعة",
+   "tanzil": "Al-Jumu'a",
+   "uz": "Jumʼa",
+   "meaning": "Juma",
+   "type": "madaniy",
+   "ayahs": 11
+  },
+  {
+   "n": 63,
+   "ar": "المنافقون",
+   "tanzil": "Al-Munaafiqoon",
+   "uz": "Munofiqun",
+   "meaning": "Munofiqlar",
+   "type": "madaniy",
+   "ayahs": 11
+  },
+  {
+   "n": 64,
+   "ar": "التغابن",
+   "tanzil": "At-Taghaabun",
+   "uz": "Tagʻobun",
+   "meaning": "Oʻzaro yutqazish",
+   "type": "madaniy",
+   "ayahs": 18
+  },
+  {
+   "n": 65,
+   "ar": "الطلاق",
+   "tanzil": "At-Talaaq",
+   "uz": "Taloq",
+   "meaning": "Taloq",
+   "type": "madaniy",
+   "ayahs": 12
+  },
+  {
+   "n": 66,
+   "ar": "التحريم",
+   "tanzil": "At-Tahrim",
+   "uz": "Tahrim",
+   "meaning": "Harom qilish",
+   "type": "madaniy",
+   "ayahs": 12
+  },
+  {
+   "n": 67,
+   "ar": "الملك",
+   "tanzil": "Al-Mulk",
+   "uz": "Mulk",
+   "meaning": "Mulk (hukmronlik)",
+   "type": "makkiy",
+   "ayahs": 30
+  },
+  {
+   "n": 68,
+   "ar": "القلم",
+   "tanzil": "Al-Qalam",
+   "uz": "Qalam",
+   "meaning": "Qalam",
+   "type": "makkiy",
+   "ayahs": 52
+  },
+  {
+   "n": 69,
+   "ar": "الحاقة",
+   "tanzil": "Al-Haaqqa",
+   "uz": "Hoqqa",
+   "meaning": "Muqarrar voqea",
+   "type": "makkiy",
+   "ayahs": 52
+  },
+  {
+   "n": 70,
+   "ar": "المعارج",
+   "tanzil": "Al-Ma'aarij",
+   "uz": "Maʼorij",
+   "meaning": "Yuksalish yoʻllari",
+   "type": "makkiy",
+   "ayahs": 44
+  },
+  {
+   "n": 71,
+   "ar": "نوح",
+   "tanzil": "Nooh",
+   "uz": "Nuh",
+   "meaning": "Nuh alayhissalom",
+   "type": "makkiy",
+   "ayahs": 28
+  },
+  {
+   "n": 72,
+   "ar": "الجن",
+   "tanzil": "Al-Jinn",
+   "uz": "Jin",
+   "meaning": "Jinlar",
+   "type": "makkiy",
+   "ayahs": 28
+  },
+  {
+   "n": 73,
+   "ar": "المزمل",
+   "tanzil": "Al-Muzzammil",
+   "uz": "Muzzammil",
+   "meaning": "Burkanib oluvchi",
+   "type": "makkiy",
+   "ayahs": 20
+  },
+  {
+   "n": 74,
+   "ar": "المدثر",
+   "tanzil": "Al-Muddaththir",
+   "uz": "Muddassir",
+   "meaning": "Oʻranib oluvchi",
+   "type": "makkiy",
+   "ayahs": 56
+  },
+  {
+   "n": 75,
+   "ar": "القيامة",
+   "tanzil": "Al-Qiyaama",
+   "uz": "Qiyomat",
+   "meaning": "Qiyomat",
+   "type": "makkiy",
+   "ayahs": 40
+  },
+  {
+   "n": 76,
+   "ar": "الانسان",
+   "tanzil": "Al-Insaan",
+   "uz": "Inson",
+   "meaning": "Inson",
+   "type": "madaniy",
+   "ayahs": 31
+  },
+  {
+   "n": 77,
+   "ar": "المرسلات",
+   "tanzil": "Al-Mursalaat",
+   "uz": "Mursalot",
+   "meaning": "Yuborilganlar",
+   "type": "makkiy",
+   "ayahs": 50
+  },
+  {
+   "n": 78,
+   "ar": "النبإ",
+   "tanzil": "An-Naba",
+   "uz": "Naba",
+   "meaning": "Xabar",
+   "type": "makkiy",
+   "ayahs": 40
+  },
+  {
+   "n": 79,
+   "ar": "النازعات",
+   "tanzil": "An-Naazi'aat",
+   "uz": "Noziot",
+   "meaning": "Sugʻurib oluvchilar",
+   "type": "makkiy",
+   "ayahs": 46
+  },
+  {
+   "n": 80,
+   "ar": "عبس",
+   "tanzil": "Abasa",
+   "uz": "Abasa",
+   "meaning": "Qovoq soldi",
+   "type": "makkiy",
+   "ayahs": 42
+  },
+  {
+   "n": 81,
+   "ar": "التكوير",
+   "tanzil": "At-Takwir",
+   "uz": "Takvir",
+   "meaning": "Oʻrab qoʻyish",
+   "type": "makkiy",
+   "ayahs": 29
+  },
+  {
+   "n": 82,
+   "ar": "الإنفطار",
+   "tanzil": "Al-Infitaar",
+   "uz": "Infitor",
+   "meaning": "Yorilish",
+   "type": "makkiy",
+   "ayahs": 19
+  },
+  {
+   "n": 83,
+   "ar": "المطففين",
+   "tanzil": "Al-Mutaffifin",
+   "uz": "Mutoffifin",
+   "meaning": "Oʻlchovdan urib qoluvchilar",
+   "type": "makkiy",
+   "ayahs": 36
+  },
+  {
+   "n": 84,
+   "ar": "الإنشقاق",
+   "tanzil": "Al-Inshiqaaq",
+   "uz": "Inshiqoq",
+   "meaning": "Yorilib ketish",
+   "type": "makkiy",
+   "ayahs": 25
+  },
+  {
+   "n": 85,
+   "ar": "البروج",
+   "tanzil": "Al-Burooj",
+   "uz": "Buruj",
+   "meaning": "Burjlar",
+   "type": "makkiy",
+   "ayahs": 22
+  },
+  {
+   "n": 86,
+   "ar": "الطارق",
+   "tanzil": "At-Taariq",
+   "uz": "Toriq",
+   "meaning": "Tunda keluvchi",
+   "type": "makkiy",
+   "ayahs": 17
+  },
+  {
+   "n": 87,
+   "ar": "الأعلى",
+   "tanzil": "Al-A'laa",
+   "uz": "Aʼlo",
+   "meaning": "Eng oliy",
+   "type": "makkiy",
+   "ayahs": 19
+  },
+  {
+   "n": 88,
+   "ar": "الغاشية",
+   "tanzil": "Al-Ghaashiya",
+   "uz": "Gʻoshiya",
+   "meaning": "Qoplab oluvchi",
+   "type": "makkiy",
+   "ayahs": 26
+  },
+  {
+   "n": 89,
+   "ar": "الفجر",
+   "tanzil": "Al-Fajr",
+   "uz": "Fajr",
+   "meaning": "Tong",
+   "type": "makkiy",
+   "ayahs": 30
+  },
+  {
+   "n": 90,
+   "ar": "البلد",
+   "tanzil": "Al-Balad",
+   "uz": "Balad",
+   "meaning": "Shahar",
+   "type": "makkiy",
+   "ayahs": 20
+  },
+  {
+   "n": 91,
+   "ar": "الشمس",
+   "tanzil": "Ash-Shams",
+   "uz": "Shams",
+   "meaning": "Quyosh",
+   "type": "makkiy",
+   "ayahs": 15
+  },
+  {
+   "n": 92,
+   "ar": "الليل",
+   "tanzil": "Al-Lail",
+   "uz": "Layl",
+   "meaning": "Kecha",
+   "type": "makkiy",
+   "ayahs": 21
+  },
+  {
+   "n": 93,
+   "ar": "الضحى",
+   "tanzil": "Ad-Dhuhaa",
+   "uz": "Zuho",
+   "meaning": "Choshgoh",
+   "type": "makkiy",
+   "ayahs": 11
+  },
+  {
+   "n": 94,
+   "ar": "الشرح",
+   "tanzil": "Ash-Sharh",
+   "uz": "Sharh",
+   "meaning": "Koʻksini ochish",
+   "type": "makkiy",
+   "ayahs": 8
+  },
+  {
+   "n": 95,
+   "ar": "التين",
+   "tanzil": "At-Tin",
+   "uz": "Tin",
+   "meaning": "Anjir",
+   "type": "makkiy",
+   "ayahs": 8
+  },
+  {
+   "n": 96,
+   "ar": "العلق",
+   "tanzil": "Al-Alaq",
+   "uz": "Alaq",
+   "meaning": "Laxta qon",
+   "type": "makkiy",
+   "ayahs": 19
+  },
+  {
+   "n": 97,
+   "ar": "القدر",
+   "tanzil": "Al-Qadr",
+   "uz": "Qadr",
+   "meaning": "Qadr",
+   "type": "makkiy",
+   "ayahs": 5
+  },
+  {
+   "n": 98,
+   "ar": "البينة",
+   "tanzil": "Al-Bayyina",
+   "uz": "Bayyina",
+   "meaning": "Ochiq hujjat",
+   "type": "madaniy",
+   "ayahs": 8
+  },
+  {
+   "n": 99,
+   "ar": "الزلزلة",
+   "tanzil": "Az-Zalzala",
+   "uz": "Zalzala",
+   "meaning": "Zilzila",
+   "type": "madaniy",
+   "ayahs": 8
+  },
+  {
+   "n": 100,
+   "ar": "العاديات",
+   "tanzil": "Al-Aadiyaat",
+   "uz": "Odiyot",
+   "meaning": "Chopuvchi otlar",
+   "type": "makkiy",
+   "ayahs": 11
+  },
+  {
+   "n": 101,
+   "ar": "القارعة",
+   "tanzil": "Al-Qaari'a",
+   "uz": "Qoriʼa",
+   "meaning": "Qattiq taqillatuvchi",
+   "type": "makkiy",
+   "ayahs": 11
+  },
+  {
+   "n": 102,
+   "ar": "التكاثر",
+   "tanzil": "At-Takaathur",
+   "uz": "Takosur",
+   "meaning": "Koʻpaytirish bilan maqtanish",
+   "type": "makkiy",
+   "ayahs": 8
+  },
+  {
+   "n": 103,
+   "ar": "العصر",
+   "tanzil": "Al-Asr",
+   "uz": "Asr",
+   "meaning": "Zamon",
+   "type": "makkiy",
+   "ayahs": 3
+  },
+  {
+   "n": 104,
+   "ar": "الهمزة",
+   "tanzil": "Al-Humaza",
+   "uz": "Humaza",
+   "meaning": "Gʻiybatchi",
+   "type": "makkiy",
+   "ayahs": 9
+  },
+  {
+   "n": 105,
+   "ar": "الفيل",
+   "tanzil": "Al-Fil",
+   "uz": "Fil",
+   "meaning": "Fil",
+   "type": "makkiy",
+   "ayahs": 5
+  },
+  {
+   "n": 106,
+   "ar": "قريش",
+   "tanzil": "Quraish",
+   "uz": "Quraysh",
+   "meaning": "Quraysh",
+   "type": "makkiy",
+   "ayahs": 4
+  },
+  {
+   "n": 107,
+   "ar": "الماعون",
+   "tanzil": "Al-Maa'un",
+   "uz": "Moʼun",
+   "meaning": "Arzimas buyum",
+   "type": "makkiy",
+   "ayahs": 7
+  },
+  {
+   "n": 108,
+   "ar": "الكوثر",
+   "tanzil": "Al-Kawthar",
+   "uz": "Kavsar",
+   "meaning": "Kavsar",
+   "type": "makkiy",
+   "ayahs": 3
+  },
+  {
+   "n": 109,
+   "ar": "الكافرون",
+   "tanzil": "Al-Kaafiroon",
+   "uz": "Kofirun",
+   "meaning": "Kofirlar",
+   "type": "makkiy",
+   "ayahs": 6
+  },
+  {
+   "n": 110,
+   "ar": "النصر",
+   "tanzil": "An-Nasr",
+   "uz": "Nasr",
+   "meaning": "Yordam",
+   "type": "madaniy",
+   "ayahs": 3
+  },
+  {
+   "n": 111,
+   "ar": "المسد",
+   "tanzil": "Al-Masad",
+   "uz": "Masad",
+   "meaning": "Pishiq arqon",
+   "type": "makkiy",
+   "ayahs": 5
+  },
+  {
+   "n": 112,
+   "ar": "الإخلاص",
+   "tanzil": "Al-Ikhlaas",
+   "uz": "Ixlos",
+   "meaning": "Ixlos (sof eʼtiqod)",
+   "type": "makkiy",
+   "ayahs": 4
+  },
+  {
+   "n": 113,
+   "ar": "الفلق",
+   "tanzil": "Al-Falaq",
+   "uz": "Falaq",
+   "meaning": "Tong yorugʻi",
+   "type": "makkiy",
+   "ayahs": 5
+  },
+  {
+   "n": 114,
+   "ar": "الناس",
+   "tanzil": "An-Naas",
+   "uz": "Nos",
+   "meaning": "Odamlar",
+   "type": "makkiy",
+   "ayahs": 6
+  }
+ ],
+ "juz": [
+  "1:1",
+  "2:142",
+  "2:253",
+  "3:93",
+  "4:24",
+  "4:148",
+  "5:82",
+  "6:111",
+  "7:88",
+  "8:41",
+  "9:93",
+  "11:6",
+  "12:53",
+  "15:1",
+  "17:1",
+  "18:75",
+  "21:1",
+  "23:1",
+  "25:21",
+  "27:56",
+  "29:46",
+  "33:31",
+  "36:28",
+  "39:32",
+  "41:47",
+  "46:1",
+  "51:31",
+  "58:1",
+  "67:1",
+  "78:1"
+ ],
+ "sajda": [
+  {
+   "s": 7,
+   "a": 206,
+   "hanafi": true
+  },
+  {
+   "s": 13,
+   "a": 15,
+   "hanafi": true
+  },
+  {
+   "s": 16,
+   "a": 50,
+   "hanafi": true
+  },
+  {
+   "s": 17,
+   "a": 109,
+   "hanafi": true
+  },
+  {
+   "s": 19,
+   "a": 58,
+   "hanafi": true
+  },
+  {
+   "s": 22,
+   "a": 18,
+   "hanafi": true
+  },
+  {
+   "s": 22,
+   "a": 77,
+   "hanafi": false
+  },
+  {
+   "s": 25,
+   "a": 60,
+   "hanafi": true
+  },
+  {
+   "s": 27,
+   "a": 26,
+   "hanafi": true
+  },
+  {
+   "s": 32,
+   "a": 15,
+   "hanafi": true
+  },
+  {
+   "s": 38,
+   "a": 24,
+   "hanafi": true
+  },
+  {
+   "s": 41,
+   "a": 38,
+   "hanafi": true
+  },
+  {
+   "s": 53,
+   "a": 62,
+   "hanafi": true
+  },
+  {
+   "s": 84,
+   "a": 21,
+   "hanafi": true
+  },
+  {
+   "s": 96,
+   "a": 19,
+   "hanafi": true
+  }
+ ]
+}
