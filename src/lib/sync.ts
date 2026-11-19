@@ -28,7 +28,13 @@ async function flush() {
   }
 }
 
-export async function syncNow() {
+let inflight: Promise<boolean> | null = null;
+export function syncNow(): Promise<boolean> {
+  inflight ??= doSync().finally(() => { inflight = null; });
+  return inflight;
+}
+
+async function doSync(): Promise<boolean> {
   const res = await fetch("/api/me/data", { credentials: "same-origin", cache: "no-store" }).catch(() => null);
   if (!res || !res.ok) { loggedIn = false; return false; }
   const json = (await res.json()) as { authenticated: boolean; items?: { key: StoreKey; value: unknown; updatedAt: string }[] };
@@ -40,7 +46,7 @@ export async function syncNow() {
   for (const key of SYNC_KEYS) {
     const local = getStore(key);
     const srv = serverMap.get(key);
-    if (!srv) { pending.set(key, local); continue; }
+    if (!srv) { if (local !== null) pending.set(key, local); continue; }
     const localNewer = (meta[key] ?? 0) > new Date(srv.updatedAt).getTime();
     const base = DEFAULTS[key];
     const serverValue = (base && typeof base === "object" && !Array.isArray(base) ? { ...(base as object), ...(srv.value as object) } : srv.value) as never;

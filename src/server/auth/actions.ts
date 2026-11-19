@@ -15,6 +15,14 @@ export type FormState = { error?: string; ok?: string; fields?: Record<string, s
 const email = z.string().trim().toLowerCase().email("Elektron pochta manzili notoʻgʻri").max(254);
 const password = z.string().min(8, "Parol kamida 8 belgidan iborat boʻlishi kerak").max(200, "Parol juda uzun");
 
+/** BOOTSTRAP_ADMIN_EMAILS muhit oʻzgaruvchisidagi manzillar birinchi kirishda administrator boʻladi. */
+async function bootstrapAdmin(userId: string, email: string) {
+  const list = (process.env.BOOTSTRAP_ADMIN_EMAILS ?? "").split(",").map((e) => e.trim().toLowerCase()).filter(Boolean);
+  if (!list.includes(email)) return;
+  const db = await getSystemDb();
+  await db.update(users).set({ role: "admin" }).where(eq(users.id, userId));
+}
+
 function safeNext(v: FormDataEntryValue | null): string {
   const s = typeof v === "string" ? v : "";
   return s.startsWith("/") && !s.startsWith("//") && !s.startsWith("/\\") ? s : "/profil";
@@ -36,6 +44,7 @@ export async function registerAction(_: FormState, form: FormData): Promise<Form
 
   const hash = await hashPassword(parsed.data.password);
   const [u] = await db.insert(users).values({ email: parsed.data.email, passwordHash: hash, displayName: parsed.data.name ?? null }).returning({ id: users.id });
+  await bootstrapAdmin(u.id, parsed.data.email);
   await createSession(u.id);
   redirect(safeNext(form.get("next")));
 }
@@ -57,6 +66,7 @@ export async function loginAction(_: FormState, form: FormData): Promise<FormSta
   const ok = await verifyPassword(parsed.data.password, u.passwordHash);
   if (!ok || u.status !== "active") return { error: u.status !== "active" && ok ? "Hisob faol emas. Administrator bilan bogʻlaning." : "Elektron pochta yoki parol notoʻgʻri", fields: { email: parsed.data.email } };
 
+  await bootstrapAdmin(u.id, u.email);
   await createSession(u.id);
   redirect(safeNext(form.get("next")));
 }

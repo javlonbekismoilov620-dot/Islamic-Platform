@@ -40,15 +40,16 @@ export async function PUT(req: Request) {
   } catch {
     return NextResponse.json({ error: "Notoʻgʻri format" }, { status: 400 });
   }
-  const items = parsed.items.filter((i) => KEYS.has(i.key) && JSON.stringify(i.value ?? null).length <= MAX_BYTES);
+  // null = standart qiymat; JSON null oʻrniga yozuv saqlanmaydi
+  const items = parsed.items.filter((i) => KEYS.has(i.key) && i.value !== null && i.value !== undefined && JSON.stringify(i.value).length <= MAX_BYTES);
   if (!items.length) return NextResponse.json({ saved: 0 });
 
   await withContext(me.id, async (tx) => {
     for (const it of items) {
       await tx
         .insert(userData)
-        .values({ userId: me.id, key: it.key, value: (it.value ?? null) as never, updatedAt: new Date() })
-        .onConflictDoUpdate({ target: [userData.userId, userData.key], set: { value: (it.value ?? null) as never, updatedAt: sql`now()` } });
+        .values({ userId: me.id, key: it.key, value: it.value as never, updatedAt: new Date() })
+        .onConflictDoUpdate({ target: [userData.userId, userData.key], set: { value: it.value as never, updatedAt: sql`now()` } });
     }
   });
   return NextResponse.json({ saved: items.length });

@@ -6,6 +6,8 @@ import { getSystemDb } from "@/server/db/client";
  * ok=true — soʻrovga ruxsat, ok=false — limit oshgan.
  */
 export async function rateLimit(key: string, limit: number, windowSec: number): Promise<{ ok: boolean; retryAfter: number }> {
+  // Faqat avtomatik testlar uchun: RATE_LIMIT_MULTIPLIER limitlarni koʻpaytiradi (standart 1).
+  limit = limit * Math.max(1, Number(process.env.RATE_LIMIT_MULTIPLIER ?? 1) || 1);
   const db = await getSystemDb();
   const res = (await db.execute(sql`
     insert into rate_limits(key, count, reset_at) values (${key}, 1, now() + make_interval(secs => ${windowSec}))
