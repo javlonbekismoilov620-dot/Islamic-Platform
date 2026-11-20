@@ -33,6 +33,11 @@ export function resolveDatabaseUrl(env: Record<string, string | undefined> = pro
   return preferred ? env[preferred] : undefined;
 }
 
+/** Postgres manzilini saqlovchi oʻzgaruvchilar nomlari (qiymatlarsiz) — diagnostika uchun. */
+export function databaseEnvNames(env: Record<string, string | undefined> = process.env): string[] {
+  return Object.keys(env).filter((k) => /_URL(_|$)/.test(k) && isPostgresUrl(env[k])).sort();
+}
+
 async function create(): Promise<Db> {
   const url = resolveDatabaseUrl();
   let db: Db;
