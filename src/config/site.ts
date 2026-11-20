@@ -6,7 +6,7 @@ export const siteConfig = {
   tagline: "Islomiy bilim va kundalik ibodat yoʻldoshi",
   description:
     "Qurʼoni karim, duolar, zikrlar, namoz darslari, hadislar va Hanafiy mazhabi boʻyicha islomiy bilimlar — oʻzbek tilida, manbalari koʻrsatilgan holda.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL || (process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
   locale: "uz_UZ",
   madhhab: "Hanafiy",
   /** Qurʼon tarjimasini standart ravishda qaysi yozuvda koʻrsatish: "lotin" yoki "kirill" (asl nashr). */
