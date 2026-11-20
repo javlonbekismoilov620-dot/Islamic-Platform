@@ -72,7 +72,7 @@ PGlite allows only one process at a time, so **stop the dev server before runnin
 
 | Variable | Purpose |
 |---|---|
-| `DATABASE_URL` | PostgreSQL connection string (`POSTGRES_URL` is also accepted). Empty means local PGlite. Required in production |
+| `DATABASE_URL` | PostgreSQL connection string. `POSTGRES_URL`, `STORAGE_URL` or any custom-prefixed `*_URL` holding a `postgres://` URL also works. Empty means local PGlite. Required in production |
 | `NEXT_PUBLIC_SITE_URL` | Canonical URL for the sitemap and Open Graph. On Vercel it falls back to the production domain |
 | `SKIP_AUTO_SEED` | `true` stops the app from seeding an empty database on first start |
 | `CONTENT_VISIBILITY` | `include_pending` (default: pending content is public but clearly labelled) or `reviewed_only` (only scholar-approved content is public). **Use `reviewed_only` for a public launch** |
