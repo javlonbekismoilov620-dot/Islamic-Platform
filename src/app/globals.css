@@ -1,0 +1,407 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ───────────────────────── Design tokens ───────────────────────── */
+:root {
+  color-scheme: light;
+  --bg: #f6f3ec;
+  --bg-elevated: #fbf9f4;
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-strong: rgba(255, 255, 255, 0.86);
+  --surface-solid: #ffffff;
+  --surface-sunken: rgba(16, 52, 41, 0.035);
+  --border: rgba(18, 46, 37, 0.09);
+  --border-strong: rgba(18, 46, 37, 0.16);
+  --text: #14201b;
+  --text-secondary: #43524b;
+  --text-muted: #6b7a73;
+  --primary: #0f5c47;
+  --primary-hover: #0b4a39;
+  --primary-contrast: #f8f5ee;
+  --primary-soft: rgba(15, 92, 71, 0.08);
+  --primary-soft-strong: rgba(15, 92, 71, 0.14);
+  --gold: #9c7a45;
+  --gold-soft: rgba(176, 141, 87, 0.14);
+  --success: #1d7a53;
+  --success-soft: rgba(29, 122, 83, 0.1);
+  --warning: #9a6514;
+  --warning-soft: rgba(196, 140, 40, 0.14);
+  --danger: #b0413a;
+  --danger-soft: rgba(176, 65, 58, 0.1);
+  --info: #2e5f8a;
+  --info-soft: rgba(46, 95, 138, 0.1);
+  --shadow-sm: 0 1px 2px rgba(20, 40, 30, 0.04), 0 2px 8px rgba(20, 40, 30, 0.04);
+  --shadow-md: 0 1px 2px rgba(20, 40, 30, 0.05), 0 8px 28px rgba(20, 40, 30, 0.07);
+  --shadow-lg: 0 2px 6px rgba(20, 40, 30, 0.05), 0 24px 60px rgba(20, 40, 30, 0.12);
+  --glow-1: rgba(15, 92, 71, 0.10);
+  --glow-2: rgba(176, 141, 87, 0.10);
+  --hero: linear-gradient(140deg, #0b4536 0%, #0f5c47 55%, #3c6e4f 120%);
+  --hero-text: #f8f5ee;
+  --ar-scale: 1;
+  --tr-scale: 1;
+  --nav-h: 64px;
+  --tab-h: 64px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b100e;
+  --bg-elevated: #111816;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-strong: rgba(24, 33, 30, 0.86);
+  --surface-solid: #141c19;
+  --surface-sunken: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.075);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text: #eaeee9;
+  --text-secondary: #c2ccc6;
+  --text-muted: #8e9c95;
+  --primary: #4fbf98;
+  --primary-hover: #66cda8;
+  --primary-contrast: #06140f;
+  --primary-soft: rgba(79, 191, 152, 0.1);
+  --primary-soft-strong: rgba(79, 191, 152, 0.17);
+  --gold: #d3b47e;
+  --gold-soft: rgba(211, 180, 126, 0.12);
+  --success: #5bc995;
+  --success-soft: rgba(91, 201, 149, 0.12);
+  --warning: #e0b05c;
+  --warning-soft: rgba(224, 176, 92, 0.12);
+  --danger: #ec8a82;
+  --danger-soft: rgba(236, 138, 130, 0.12);
+  --info: #8bb8e0;
+  --info-soft: rgba(139, 184, 224, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 2px 6px rgba(0, 0, 0, 0.4), 0 28px 70px rgba(0, 0, 0, 0.5);
+  --glow-1: rgba(40, 140, 105, 0.13);
+  --glow-2: rgba(211, 180, 126, 0.06);
+  --hero: linear-gradient(140deg, #0c2a22 0%, #12392e 55%, #1d4a3a 120%);
+  --hero-text: #eef3ef;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-surface-solid: var(--surface-solid);
+  --color-sunken: var(--surface-sunken);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-fg: var(--text);
+  --color-fg-2: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--primary-contrast);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-2: var(--primary-soft-strong);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-quran: "Amiri Quran", "Noto Naskh Arabic Variable", serif;
+  --font-arabic: "Noto Naskh Arabic Variable", "Amiri Quran", serif;
+  --shadow-soft: var(--shadow-sm);
+  --shadow-card: var(--shadow-md);
+  --shadow-float: var(--shadow-lg);
+  --radius-card: 1.5rem;
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 85% -10%, var(--glow-1), transparent 60%),
+    radial-gradient(50rem 36rem at -10% 20%, var(--glow-2), transparent 60%),
+    var(--bg);
+}
+
+::selection {
+  background: var(--primary-soft-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ───────────────────────── Surfaces ───────────────────────── */
+@utility glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(22px) saturate(1.6);
+  backdrop-filter: blur(22px) saturate(1.6);
+}
+
+@utility glass-strong {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  backdrop-filter: blur(28px) saturate(1.8);
+}
+
+@utility card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+}
+
+@utility hero {
+  background: var(--hero);
+  color: var(--hero-text);
+  border: 1px solid color-mix(in srgb, var(--hero-text) 10%, transparent);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-md);
+}
+
+@utility hairline {
+  border-color: var(--border);
+}
+
+/* ───────────────────────── Arabic typography ───────────────────────── */
+.ar-quran {
+  font-family: var(--font-quran);
+  direction: rtl;
+  text-align: right;
+  font-size: calc(1.85rem * var(--ar-scale));
+  line-height: 2.25;
+  word-spacing: 0.06em;
+  font-feature-settings: "kern", "liga", "calt";
+  font-variant-ligatures: common-ligatures contextual;
+  unicode-bidi: isolate;
+}
+
+.ar-text {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  font-size: calc(1.6rem * var(--ar-scale));
+  line-height: 2.1;
+  unicode-bidi: isolate;
+}
+
+.ar-inline {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+.translation-text {
+  font-size: calc(1.0625rem * var(--tr-scale));
+  line-height: 1.75;
+}
+
+.translit {
+  font-size: calc(1.02rem * var(--tr-scale));
+  line-height: 1.7;
+  color: var(--text-secondary);
+  letter-spacing: 0.005em;
+}
+
+.ayah-num {
+  font-family: var(--font-sans);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  padding: 0 0.35rem;
+  margin-inline: 0.35rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  vertical-align: middle;
+  color: var(--gold);
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  background: var(--gold-soft);
+  direction: ltr;
+}
+
+/* ───────────────────────── Prose (articles & lessons) ───────────────────────── */
+.prose-uz {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.prose-uz h2 {
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  margin: 2.2rem 0 0.8rem;
+}
+.prose-uz h3 {
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 620;
+  margin: 1.6rem 0 0.5rem;
+}
+.prose-uz p {
+  margin: 0.85rem 0;
+}
+.prose-uz ul,
+.prose-uz ol {
+  margin: 0.8rem 0;
+  padding-inline-start: 1.4rem;
+}
+.prose-uz ul {
+  list-style: disc;
+}
+.prose-uz ol {
+  list-style: decimal;
+}
+.prose-uz li {
+  margin: 0.35rem 0;
+  padding-inline-start: 0.2rem;
+}
+.prose-uz li::marker {
+  color: var(--primary);
+}
+.prose-uz strong {
+  color: var(--text);
+  font-weight: 620;
+}
+.prose-uz a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  text-underline-offset: 3px;
+}
+.prose-uz blockquote {
+  border-inline-start: 3px solid var(--gold);
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: var(--text);
+  margin: 1.2rem 0;
+}
+
+/* ───────────────────────── Motion ───────────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-in {
+  animation: fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-sunken);
+  border-radius: 12px;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--surface), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root[data-reduce-motion="true"] *,
+:root[data-reduce-motion="true"] *::before,
+:root[data-reduce-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* Larger text accessibility mode */
+:root[data-large-text="true"] {
+  font-size: 112.5%;
+}
+
+/* Bottom nav safe area */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+}
+.main-pad {
+  padding-bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 24px);
+}
+@media (min-width: 1024px) {
+  .main-pad {
+    padding-bottom: 64px;
+  }
+}
+
+/* Native dialog */
+dialog::backdrop {
+  background: rgba(8, 14, 12, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Hide scrollbars on horizontal chip rows */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media print {
+  body::before,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+}

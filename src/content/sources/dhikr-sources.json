@@ -1,0 +1,278 @@
+[
+ {
+  "id": "subhanalloh",
+  "arabic": "سُبْحَانَ اللَّهِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6406,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6406,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "alhamdulillah",
+  "arabic": "الْحَمْدُ لِلَّهِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "tirmidhi",
+   "number": 3383,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "22b7ffbbca9beb5d4f108cc0389a3cd16917876b3ceb32993c46e1554afd871b"
+  },
+  "checks": [
+   {
+    "collection": "tirmidhi",
+    "number": 3383,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [
+   {
+    "name": "Ahmad Muhammad Shakir",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Al-Albani",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Bashar Awad Maarouf",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Zubair Ali Zai",
+    "grade": "Hasan"
+   }
+  ],
+  "verified": true
+ },
+ {
+  "id": "allohu-akbar",
+  "arabic": "اللَّهُ أَكْبَرُ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 795,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 795,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "astagfirulloh",
+  "arabic": "أَسْتَغْفِرُ اللَّهَ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "muslim",
+   "number": 1334,
+   "abdulBaqi": "591",
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "2cb296f3455ff8a3da9f6a0ca3de75da675788b2fb446ad316df297838e48217"
+  },
+  "checks": [
+   {
+    "collection": "muslim",
+    "number": 1334,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "la-ilaha-illalloh",
+  "arabic": "لاَ إِلَهَ إِلاَّ اللَّهُ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "tirmidhi",
+   "number": 3383,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "22b7ffbbca9beb5d4f108cc0389a3cd16917876b3ceb32993c46e1554afd871b"
+  },
+  "checks": [
+   {
+    "collection": "tirmidhi",
+    "number": 3383,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [
+   {
+    "name": "Ahmad Muhammad Shakir",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Al-Albani",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Bashar Awad Maarouf",
+    "grade": "Hasan"
+   },
+   {
+    "name": "Zubair Ali Zai",
+    "grade": "Hasan"
+   }
+  ],
+  "verified": true
+ },
+ {
+  "id": "subhanallohi-va-bihamdihi",
+  "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6405,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6405,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "subhanallohil-aziym",
+  "arabic": "سُبْحَانَ اللَّهِ الْعَظِيمِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6406,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6406,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "la-havla-va-la-quvvata",
+  "arabic": "لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6384,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6384,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "salovot",
+  "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ، وَعَلَى آلِ مُحَمَّدٍ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 3370,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 3370,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "tahlil",
+  "arabic": "لاَ إِلَهَ إِلاَّ اللَّهُ، وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهْوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6403,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6403,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ },
+ {
+  "id": "astagfirulloh-va-atubu-ilayh",
+  "arabic": "أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ",
+  "origin": {
+   "kind": "hadith",
+   "collection": "bukhari",
+   "number": 6307,
+   "abdulBaqi": null,
+   "dataset": "fawazahmed0/hadith-api",
+   "sha256": "f887d8724f75fb6e1d5d29342a173af5346ad9b933173c85e6e3cb570063ea33"
+  },
+  "checks": [
+   {
+    "collection": "bukhari",
+    "number": 6307,
+    "ok": true,
+    "method": "extracted"
+   }
+  ],
+  "grades": [],
+  "verified": true
+ }
+]
