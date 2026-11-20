@@ -72,8 +72,9 @@ PGlite allows only one process at a time, so **stop the dev server before runnin
 
 | Variable | Purpose |
 |---|---|
-| `DATABASE_URL` | PostgreSQL connection string. Empty means local PGlite. Required in production |
-| `NEXT_PUBLIC_SITE_URL` | Canonical URL, used for the sitemap, Open Graph and the Origin check on API writes |
+| `DATABASE_URL` | PostgreSQL connection string (`POSTGRES_URL` is also accepted). Empty means local PGlite. Required in production |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URL for the sitemap and Open Graph. On Vercel it falls back to the production domain |
+| `SKIP_AUTO_SEED` | `true` stops the app from seeding an empty database on first start |
 | `CONTENT_VISIBILITY` | `include_pending` (default: pending content is public but clearly labelled) or `reviewed_only` (only scholar-approved content is public). **Use `reviewed_only` for a public launch** |
 | `BOOTSTRAP_ADMIN_EMAILS` | Comma-separated emails that become admin on sign-in. Remove it after the first admin exists |
 | `PGLITE_DIR` | Optional custom PGlite directory |
@@ -82,18 +83,36 @@ PGlite allows only one process at a time, so **stop the dev server before runnin
 
 ### Production database
 
-Point `DATABASE_URL` at any PostgreSQL 15+ instance (self-hosted, Supabase, Neon, …). The first
-migration runs `CREATE ROLE app_user` and `GRANT app_user TO <current user>`. Every request then
-runs inside a transaction with `SET LOCAL ROLE app_user`, so RLS policies apply. The connecting
-role therefore needs permission to create roles, or a DBA must create `app_user` beforehand.
+Point `DATABASE_URL` (or `POSTGRES_URL`) at any PostgreSQL 15+ instance (Neon, Supabase,
+self-hosted, …). On the first request, the app applies pending migrations and, if the database
+is empty, seeds the content. Both steps run under a transaction-level advisory lock. That makes
+them safe when several server instances cold-start at once, and safe behind a transaction-mode
+pooler such as PgBouncer. Set `SKIP_AUTO_SEED=true` to turn seeding off.
 
-```bash
-npm run db:migrate
-npm run db:seed          # --force rewrites untouched AI drafts; edited content is kept
-npm run build && npm start
-```
+The first migration runs `CREATE ROLE app_user` and `GRANT app_user TO <current user>`. Every
+request then runs inside a transaction with `SET LOCAL ROLE app_user`, so RLS policies apply. The
+connecting role therefore needs `CREATEROLE` (the default owner role on Neon and Supabase has it),
+or a DBA must create `app_user` beforehand.
 
-Nothing in this repository deploys anything or signs up for paid services.
+`npm run db:migrate` and `npm run db:seed -- --force` are still available to run by hand.
+(`--force` rewrites untouched AI drafts and keeps edited content.)
+
+### Deploying to Vercel
+
+`vercel.json` pins the framework to Next.js and the functions region to `fra1` (Frankfurt, the
+closest Vercel region to Uzbekistan). Without it, a project imported while the repository was
+still empty is set up as "Other" and serves only a Vercel `404: NOT_FOUND` page.
+
+1. In the Vercel project: **Storage → Create Database → Neon (Postgres)**. Pick the **Frankfurt
+   (eu-central-1)** region so the database sits next to the functions, then connect it to the
+   project. This sets `DATABASE_URL`.
+2. **Settings → Environment Variables**: set `BOOTSTRAP_ADMIN_EMAILS` (your email) and, for a
+   public launch, `CONTENT_VISIBILITY=reviewed_only`. `NEXT_PUBLIC_SITE_URL` is optional: it falls
+   back to the project's Vercel production domain.
+3. **Deployments → Redeploy** the latest `main` deployment.
+4. Register with the bootstrap email to become admin, then remove `BOOTSTRAP_ADMIN_EMAILS`.
+
+The repository itself never deploys anything or signs up for paid services.
 
 ## Scripts
 
