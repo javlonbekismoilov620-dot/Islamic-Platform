@@ -18,9 +18,23 @@ async function seedUnlessSkipped(db: Db) {
   await seedIfEmpty(db);
 }
 
+const isPostgresUrl = (v?: string): v is string => !!v && /^postgres(ql)?:\/\//i.test(v);
+
+/**
+ * Baza manzilini topadi. Vercel integratsiyalari uni ulashdagi prefiksga qarab turli nomlar bilan beradi
+ * (DATABASE_URL, POSTGRES_URL, STORAGE_URL, <PREFIKS>_DATABASE_URL, …). Avval maʼlum nomlar,
+ * keyin istalgan *_URL ichidan postgres:// bilan boshlanadigani (pooler'siz nusxalar oxirida).
+ */
+export function resolveDatabaseUrl(env: Record<string, string | undefined> = process.env): string | undefined {
+  for (const k of ["DATABASE_URL", "POSTGRES_URL", "STORAGE_URL"]) if (isPostgresUrl(env[k])) return env[k];
+  const keys = Object.keys(env).filter((k) => /_URL(_|$)/.test(k) && isPostgresUrl(env[k])).sort();
+  const pooled = keys.filter((k) => !/UNPOOLED|NON_POOLING|NO_SSL/.test(k));
+  const preferred = pooled.find((k) => /_(DATABASE|POSTGRES)_URL$/.test(k)) ?? pooled[0] ?? keys[0];
+  return preferred ? env[preferred] : undefined;
+}
+
 async function create(): Promise<Db> {
-  // DATABASE_URL — Neon va boshqalar; POSTGRES_URL — baʼzi Vercel integratsiyalari shu nomni beradi.
-  const url = process.env.DATABASE_URL || process.env.POSTGRES_URL;
+  const url = resolveDatabaseUrl();
   let db: Db;
   let exec: (q: string) => Promise<unknown>;
   if (url) {
